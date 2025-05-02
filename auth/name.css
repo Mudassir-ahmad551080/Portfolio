@@ -1,0 +1,39 @@
+#picdiv{
+    width: 200px;
+    height: 200px;
+    background-image: url(haris.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: local;
+    border-radius: 50%;
+    transition: 500ms;
+    cursor: pointer;
+    filter: contrast(2);
+    overflow: hidden;
+}
+button{
+    background-color: red;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px solid black;
+}
+
+#picdiv:hover{
+  scale: 1.1;
+  border-radius: 10px;
+}
+
+button:hover{
+    box-shadow: 5px 5px 0px solid black;
+}
+
+h1{
+    font-size: 80px;
+    background-image: url(outer.jpeg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

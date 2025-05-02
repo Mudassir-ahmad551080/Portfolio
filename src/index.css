@@ -1,0 +1,39 @@
+
+@import "tailwindcss";
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mainnav{
+    align-items: center;
+}
+
+#anotherdiv{
+    margin-left: -30px;
+}
+
+#mylist{
+    list-style: none;
+}
+
+#tooglebutton{
+    /* position: absolute; */
+    top: 20px;
+}
+#theme-btn{
+    border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+
+}
+
+/* Dark mode */
+
+#dark{
+    background-color: rgb(8, 7, 7);
+    transition: 0.5s all;
+    color: white;
+}
