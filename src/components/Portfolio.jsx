@@ -18,7 +18,7 @@ const Portfolio = () => {
                 <div id={theme} className='bg-yellow-50  border-1 rounded-md  hover:bg-black hover:text-white cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-72 md:w-78 shadow-md p-5 mt-10 ml-8 md:ml-0'>
                     <img className='w-20 h-20 rounded-md' src={mongodb} alt="" />
                     <h1 className='font-bold text-xl font-sans'>MongoDb</h1>
-                    <p className='mt-2'>MongoDB is a NoSQL database designed for storing and managing large volumes of unstructured or semi-structured data. Unlike traditional relational databases (like MySQL or PostgreSQL), MongoDB uses a document-oriented data model, where data is stored in JSON-like documents called BSON (Binary JSON).</p>
+                    <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae asperiores aut explicabo, veniam iste dolorum assumenda libero non praesentium!</p>
                     <div className='flex space-x-10 mt-5'>
                         <button className='bg-green-400 md:p-3   text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Vedio</button>
                         <button className='bg-red-500 md:p-3   text-white rounded-md  cursor-pointer font-black p-1'>Source Code</button>
