@@ -27,11 +27,11 @@ const About = () => {
                     </p>
                 </div>
                 <div id='second' className='mt-8 space-y-4'>
-                    <h1 className='text-green-500 font-bold text-2xl'>Skill & Exprience</h1>
+                    <h1 className='text-green-500 font-bold text-2xl'>Skill & Experience</h1>
                     <p>As a seasoned MERN stack developer, I possess a strong proficiency in designing, developing, and deploying scalable, efficient, and secure web applications. With a keen eye for detail and a passion for staying up-to-date with the latest industry trends, I deliver high-quality solutions that meet and exceed client expectations. </p>
                 </div>
                 <div id='second' className='mt-8 space-y-4'>
-                    <h1 className='text-green-500 font-bold text-2xl'>Porfessionla Exprience</h1>
+                    <h1 className='text-green-500 font-bold text-2xl'>Porfessional Experience</h1>
                     <p>- MERN stack development (MongoDB, Express, React, Node.js)
                         Front-end and back-end development
                         Responsive web design

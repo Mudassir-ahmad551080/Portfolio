@@ -11,7 +11,7 @@ const Exprience = () => {
     return (
         <div id={theme} name='Experiance' className='p-5 items-center md:p-10   mx-auto h-a container px-4  flex flex-wrap gap-10  md:px-20  md:p-10'>
             <div className='space-y-1 ml-20 md:ml-0'>
-                <h1 className='font-bold text-2xl mt-10'>Expriences</h1>
+                <h1 className='font-bold text-2xl mt-10'>Experiences</h1>
             </div>
             <div className=' w-screen flex flex-wrap md:gap-10 items-center'>
                 <div id={theme} className='bg-yellow-50 border ml-16 md:ml-0 items-center text-center  cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
