@@ -5,7 +5,7 @@ import html from '../../public/language/html.png';
 import tailwindcss from '../../public/language/tailwind-css.svg'
 import react from '../../public/language/react.jpg'
 import { useTheme } from '../context/ThemeContext';
-
+import Slider from '../components/Slider.jsx'
 const Exprience = () => {
     const [theme] = useTheme()
     return (
@@ -38,7 +38,7 @@ const Exprience = () => {
                     <img className='rounded-md w-50 h-50' src={react} alt="" />
                     <h2 className='mt-5'>React</h2>
                 </div>
-
+                <Slider/>
             </div>
         </div>
     )

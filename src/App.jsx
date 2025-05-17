@@ -21,6 +21,7 @@ const App = () => {
         }}
         className='bg-lime-400 h-[2px] mb-20 origin-left   fixed w-full z-120'></motion.div>
         <Navbar />
+        
         <div className='mt-15 absolute w-full h-[5px] mt-11 fixed mt-1 z-1 hidden md:flex bg-amber-100'></div>
         <Home />
         <Motion />

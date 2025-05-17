@@ -37,3 +37,23 @@ body{
     transition: 0.5s all;
     color: white;
 }
+
+#myimage{
+  animation-name: imagChange;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes imagChange {
+    to{
+       border-radius: 10px solide black;
+       background-attachment: fixed;
+       transition:  all ease-in-out 2s;
+    }
+    from{
+     border-radius: 20px ;
+     rotate: 180(deg);
+     transition: all linear 2s;
+     border-radius: 50%;
+    }
+}
