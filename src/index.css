@@ -44,7 +44,7 @@ body{
   animation-iteration-count: infinite;
 }
 
-@keyframes imagChange {
+/* @keyframes imagChange {
     to{
        border-radius: 10px solide black;
        background-attachment: fixed;
@@ -56,4 +56,5 @@ body{
      transition: all linear 2s;
      border-radius: 50%;
     }
-}
+} */
+

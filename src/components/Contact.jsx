@@ -9,7 +9,23 @@ function Contact() {
   let [requirename, setRequirename] = useState('');
   let [requireemail, setRequireEmail] = useState('')
   let [requiremessage, setRequireMessage] = useState('')
+  const [formsubmit,setFormsubmit]=useState('')
+  const [error,setError]= useState('');
   const handleSubmit = (e) => {
+    if(name.length<5){
+      setError("Your name must be at least 5 charators")
+      setFormsubmit('')
+      e.preventDefault()
+      return ;
+    }
+
+    if(message.length<20){
+      setError("the message lenght will contain the 20 charactor")
+      e.preventDefault()
+      setFormsubmit('')
+      return;
+    }
+     
     {
       e.preventDefault();
       setName('');
@@ -22,8 +38,9 @@ function Contact() {
       setRequirename('')
       setRequireEmail('')
       setRequireMessage('')
+      setError('')
+      setFormsubmit("Form Submit Sucessfuly")
     }
-
 
   };
   const [theme] = useTheme();
@@ -93,13 +110,23 @@ function Contact() {
               placeholder="Enter your message"
             />
           </div>
+          {error && 
+            <p className='text-red-500 text-sm mb-4'>{error}</p>
+        }
+        
           <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-blue-500 cursor-pointer   hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type='submit'
           >
             Send Message
           </button>
         </form>
+        <div>
+          <p className='text-green-500 text-sm mt-3 '>
+            {formsubmit}
+          </p>
+          
+        </div>
       </div>
     </>
   );
