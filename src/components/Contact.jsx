@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
+import axios from 'axios';
 
 function Contact() {
   const [name, setName] = useState('');
@@ -11,7 +12,7 @@ function Contact() {
   let [requiremessage, setRequireMessage] = useState('')
   const [formsubmit,setFormsubmit]=useState('')
   const [error,setError]= useState('');
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if(name.length<5){
       setError("Your name must be at least 5 charators")
       setFormsubmit('')
@@ -41,6 +42,16 @@ function Contact() {
       setError('')
       setFormsubmit("Form Submit Sucessfuly")
     }
+    try {
+      await axios.post('https://getform.io/f/bvryewyb', {
+        name,
+        email,
+        message
+      });
+      alert("your message is send")
+    } catch (error) {
+        console.log(error)
+    }
 
   };
   const [theme] = useTheme();
@@ -49,7 +60,7 @@ function Contact() {
     <>
       <div id={theme} name='Contact' className="max-w-md dark:text-white  mx-auto p-4 bg-yellow-50 mx-10 rounded shadow-md">
         <h2 className="text-lg font-bold mb-4">Send Your Message</h2>
-        <form action='https://getform.io/f/anllvxra' method="POST" onSubmit={handleSubmit}>
+        <form action='https://getform.io/f/bvryewyb' method="POST" onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
               Name
