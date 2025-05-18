@@ -40,7 +40,6 @@ function Contact() {
       setRequireEmail('')
       setRequireMessage('')
       setError('')
-      setFormsubmit("Form Submit Sucessfuly")
     }
     try {
       await axios.post('https://getform.io/f/bvryewyb', {
@@ -49,8 +48,11 @@ function Contact() {
         message
       });
      toast.success("Your message has been send Sucessfuly")
+      setFormsubmit("Form Submit Sucessfuly")
     } catch (error) {
         toast.error("something went wrong")
+        setFormsubmit("Something Went wrong")
+        return;
     }
 
   };
