@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import axios from 'axios';
-
+import { toast } from 'react-hot-toast';
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -48,9 +48,9 @@ function Contact() {
         email,
         message
       });
-      alert("your message is send")
+     toast.success("Your message has been send Sucessfuly")
     } catch (error) {
-        console.log(error)
+        toast.error("something went wrong")
     }
 
   };

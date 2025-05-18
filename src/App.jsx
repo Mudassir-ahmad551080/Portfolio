@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import { useTheme } from './context/ThemeContext'
 import Motion from './components/Motion'
 import { motion,useScroll } from 'framer-motion'
+import { Toaster } from 'react-hot-toast'
 const App = () => {
   const scrollYprogress=useScroll().scrollYProgress
   const [theme] = useTheme();
@@ -33,7 +34,7 @@ const App = () => {
         <Contact />
         <Footer />
       </div>
-
+    <Toaster/>
     </>
   )
 }
