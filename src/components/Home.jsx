@@ -30,7 +30,7 @@ const Home = () => {
                     >Hello, I'am
                         <ReactTyped
                             className='ml-2 text-red-600'
-                            strings={["Programmer", "Developer", "Coder"]}
+                            strings={["Programmer", "Developer", "Coder",'Web Designer']}
                             typeSpeed={40}
                             backSpeed={50}
                             loop={true}

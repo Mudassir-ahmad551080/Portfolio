@@ -15,7 +15,7 @@ const Portfolio = () => {
                 <span className='underline font-bold'>Feature Project</span>
             </div>
             <div id={theme} className=' w-screen md:ml-15 md:gap-10 flex flex-wrap  items-center'>
-                <div id={theme} className='bg-yellow-50  border-1 rounded-md  hover:bg-black hover:text-white cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-72 md:w-78 shadow-md p-5 mt-10 ml-8 md:ml-0'>
+                <div  id={theme} className='bg-yellow-50  border-1 rounded-md  hover:bg-black hover:text-white cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-72 md:w-78 shadow-md p-5 mt-10 ml-8 md:ml-0'>
                     <img className='w-20 h-20 rounded-md' src={mongodb} alt="" />
                     <h1 className='font-bold text-xl font-sans'>MongoDb</h1>
                     <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae asperiores aut explicabo, veniam iste dolorum assumenda libero non praesentium!</p>

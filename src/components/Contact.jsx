@@ -47,11 +47,12 @@ function Contact() {
         email,
         message
       });
-     toast.success("Your message has been send Sucessfuly")
-      setFormsubmit("Form Submit Sucessfuly")
+     toast.success("Your message has been send Sucessfuly");
     } catch (error) {
-        toast.error("something went wrong")
-        setFormsubmit("Something Went wrong")
+        toast.error("something went wrong");
+        setName(name);
+        setEmail(email);
+        setMessage(message);
         return;
     }
 
@@ -128,7 +129,8 @@ function Contact() {
         }
         
           <button
-            className="bg-blue-500 cursor-pointer   hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          id='anotherbutton'
+            className="bg-blue-500 cursor-pointer shadow-md   hover:bg-blue-700  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type='submit'
           >
             Send Message

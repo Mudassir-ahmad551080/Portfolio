@@ -58,3 +58,46 @@ body{
     }
 } */
 
+#anotherbutton{
+    background-color: transparent;
+    padding: 10px 10px;
+    cursor: pointer;
+    color: rgb(88, 88, 249);
+    border-radius: 10px;
+    border-top: 2px solid orangered;
+    border-bottom: 2px solid orangered;
+    border-right: 2px solid lawngreen;
+    border-left: 2px solid lawngreen;
+    animation-name: animation;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animation {
+    0%{
+       border-top: 1px solid rgb(0, 255, 174);
+    border-bottom: 1px solid rgb(0, 255, 191);
+    border-right: 1px solid rgba(0, 162, 255, 0.68);
+    border-left: 1px solid rgb(0, 151, 252);
+    }
+    50%{
+      border-top: 1px solid rgb(238, 0, 255);
+    border-bottom: 1px solid rgb(234, 0, 255);
+    border-right: 1px solid rgb(255, 0, 68);
+    border-left: 1px solid rgb(255, 0, 64);
+    }
+    75%{
+      border-top: 1px solid rgb(200, 255, 0);
+    border-bottom: 1px solid rgb(234, 255, 0);
+    border-right: 1px solid rgb(255, 0, 221);
+    border-left: 1px solid rgb(255, 0, 255);
+    }
+    100%{
+     border-top: 1px solid orangered;
+    border-bottom: 1px solid orangered;
+    border-right: 1px solid lawngreen;
+    border-left: 1px solid lawngreen;
+    }
+}
+
