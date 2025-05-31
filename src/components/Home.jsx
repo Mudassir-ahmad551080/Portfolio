@@ -16,6 +16,38 @@ import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 const Home = () => {
     const [theme] = useTheme();
+    const techIcons = [pic, second, third, forth];
+    const socialLinks = [
+        { href: "https://facebook.com/", src: facebook, alt: "Facebook" },
+        { href: "https://pk.linkedin.com/", src: linkdin, alt: "LinkedIn" },
+        { href: "https://www.youtube.com/", src: youtube, alt: "YouTube" },
+        { href: "https://www.instagram.com/", src: instagram, alt: "Instagram" },
+    ];
+
+    const IconVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: i => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.2,
+                duration: 0.6,
+                type: "spring"
+            }
+        })
+    };
+    const iconVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: i => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.2,
+                duration: 0.6,
+                type: "spring"
+            }
+        })
+    };
     return (
         <>
             <div name='Home' id={theme} className=' p-3 w-full flex md:flex-row flex-col'>
@@ -48,42 +80,55 @@ const Home = () => {
                         <div className='mt-10 space-y-1 text-center'>
                             <h1 className='text-xl font-bold'>Available On</h1>
                             <div id='icon' className='flex space-x-2 flex-wrap'>
-                                <li id='mylist' className='font-bold cursor-pointer'>
-                                    <a href="https://facebook.com/" target='_blank'>
-                                        <img src={facebook} alt="" className='w-10 hover:scale-110 duration-200 rounded-full h-10' /></a>
-                                </li>
-                                <li id='mylist' className='font-bold cursor-pointer'>
-
-                                    <a href="https://pk.linkedin.com/" target='_blank'>
-                                        <img src={linkdin} alt="" className='w-10 hover:scale-110 duration-200 rounded-full h-10' />
-                                    </a>
-
-                                </li>
-                                <li id='mylist' className='font-bold cursor-pointer' >
-                                    <a href="https://www.youtube.com/" target='_blank'>
-                                        <img src={youtube} alt="" className='w-10 hover:scale-110 duration-200 rounded-full h-10' /> </a>
-
-                                </li>
-                                <li id='mylist' className='font-bold cursor-pointer'>
-                                    <a href="https://www.instagram.com/" target='_blank'>
-                                        <img src={instagram} alt="" className='w-10 hover:scale-110 duration-200 rounded-full h-10' />
-                                    </a>
-                                </li>
+                                {socialLinks.map((link, index) => (
+                                    <motion.li
+                                        key={index}
+                                        custom={index}
+                                        variants={iconVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        className='font-bold cursor-pointer list-none'
+                                    >
+                                        <a href={link.href} target='_blank' rel="noopener noreferrer">
+                                            <img
+                                                src={link.src}
+                                                alt={link.alt}
+                                                className='w-10 h-10 rounded-full hover:scale-110 duration-200'
+                                            />
+                                        </a>
+                                    </motion.li>
+                                ))}
                             </div>
                         </div>
                         <div className=' mt-4 md:mt-8 space-y-2'>
                             <h1 className='font-bold'>Current Working On</h1>
                             <div id='for-image-icon' className='flex space-x-3 flex-wrap'>
-                                <img className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer' src={pic} alt="" />
-                                <img className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer' src={second} alt="" />
-                                <img className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer' src={third} alt="" />
-                                <img className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer' src={forth} alt="" />
+                                {techIcons.map((src, index) => (
+                                    <motion.img
+                                        key={index}
+                                        custom={index}
+                                        variants={iconVariants}
+                                        initial="hidden"
+                                        animate="visible"
+                                        src={src}
+                                        alt={`tech-${index}`}
+                                        className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer'
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id='img-div' className='md:mt-25 md:ml-32 md:order-2 order-1  m-8  mt-28 bottom-0 rounded-full flex'>
-                    <img id='hacker' className='md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0  md:h-[400px]' src={logo} alt="" />
+                    <motion.img
+                        id="hacker"
+                        className="md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                        src={logo}
+                        alt="profile"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 2, type: "spring" }}
+                    />
                 </div>
             </div>
 
