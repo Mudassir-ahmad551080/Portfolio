@@ -42,7 +42,7 @@ function Contact() {
       setError('')
     }
     try {
-      await axios.post('https://getform.io/f/bvryewyb', {
+      await axios.post('https://getform.io/f/agdldjpb', {
         name,
         email,
         message
@@ -63,7 +63,7 @@ function Contact() {
     <>
       <div id={theme} name='Contact' className="max-w-md dark:text-white  mx-auto p-4 bg-yellow-50 mx-10 rounded shadow-md">
         <h2 className="text-lg font-bold mb-4">Send Your Message</h2>
-        <form action='https://getform.io/f/bvryewyb' method="POST" onSubmit={handleSubmit}>
+        <form action='https://getform.io/f/agdldjpb' method="POST" onSubmit={handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
               Name

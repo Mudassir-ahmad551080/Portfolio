@@ -11,6 +11,7 @@ import instagram from '../../public/icon/instagram.jpg'
 import { ReactTyped, Typed } from "react-typed";
 import picture from "../../public/name.jpg";
 import face from '../../public/icon/facebook.jpg'
+import logo from '../../public/name.png'
 import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 const Home = () => {
@@ -30,7 +31,7 @@ const Home = () => {
                     >Hello, I'am
                         <ReactTyped
                             className='ml-2 text-red-600'
-                            strings={["Programmer", "Developer", "Coder",'Web Designer']}
+                            strings={["Programmer", "Developer", "Coder", 'Web Designer']}
                             typeSpeed={40}
                             backSpeed={50}
                             loop={true}
@@ -82,7 +83,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div id='img-div' className='md:mt-25 md:ml-32 md:order-2 order-1  m-8  mt-28 bottom-0 rounded-full flex'>
-                    <img id='hacker' className='md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0  md:h-[400px]' src={picture} alt="" />
+                    <img id='hacker' className='md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0  md:h-[400px]' src={logo} alt="" />
                 </div>
             </div>
 
