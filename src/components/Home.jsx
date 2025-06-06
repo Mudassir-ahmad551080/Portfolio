@@ -123,7 +123,7 @@ const Home = () => {
                     <motion.img
                         id="hacker"
                         className="md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
-                        src={logo}
+                        src='https://assets-v2.lottiefiles.com/a/35735896-1176-11ee-8649-af549fb59863/lsQS6q92QV.gif'
                         alt="profile"
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}

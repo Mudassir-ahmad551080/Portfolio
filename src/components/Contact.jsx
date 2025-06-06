@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+import logo from '../../public/logo.gif'
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -140,7 +141,7 @@ function Contact() {
           <p className='text-green-500 text-sm mt-3 '>
             {formsubmit}
           </p>
-          
+          <img src={logo} alt="" className='w-20 h-20 md:ml-0 ml-3' />
         </div>
       </div>
     </>
