@@ -11,7 +11,7 @@ function Navbar() {
   const navItems = [
     {
       id: 1,
-      text: "Home",
+      text: "Hom",
     },
     {
       id: 2,
