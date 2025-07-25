@@ -21,7 +21,7 @@ const Portfolio = () => {
                     <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae asperiores aut explicabo, veniam iste dolorum assumenda libero non praesentium!</p>
                     <div className='flex space-x-10 mt-5'>
                         <a href="https://virtual-assistan.netlify.app/" target='_blank' className='bg-green-400 md:p-3 p-1 text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Project</a>
-                       <a target='_blank' href="https://github.com/mudassir-ahmad123/Portfolio.git" className='bg-red-500 md:p-3 p-1 text-white rounded-md  cursor-pointer font-black p-1'>Source Code</a>
+                        <a target='_blank' href="https://github.com/mudassir-ahmad123/Portfolio.git" className='bg-red-500 md:p-3 p-1 text-white rounded-md  cursor-pointer font-black p-1'>Source Code</a>
                     </div>
                 </div>
                 {/* for React Image */}
@@ -40,7 +40,7 @@ const Portfolio = () => {
                     <h1 className='font-bold text-xl font-sans'>Express</h1>
                     <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae asperiores aut explicabo, veniam iste dolorum assumenda libero non praesentium!</p>
                     <div className='flex space-x-10 mt-5'>
-                         <a href="https://virtual-assistan.netlify.app/" target='_blank' className='bg-green-400 md:p-3 p-1 text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Project</a>
+                        <a href="https://virtual-assistan.netlify.app/" target='_blank' className='bg-green-400 md:p-3 p-1 text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Project</a>
                         <a target='_blank' href="https://github.com/mudassir-ahmad123/tektackteo-app.git" className='bg-red-500 md:p-3 p-1 text-white rounded-md  cursor-pointer font-black p-1'>Source Code</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ const Portfolio = () => {
                     <h1 className='font-bold text-xl font-sans'>Redux</h1>
                     <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia repudiandae asperiores aut explicabo, veniam iste dolorum assumenda libero non praesentium!</p>
                     <div className='flex space-x-10 mt-5'>
-                         <a href="https://virtual-assistan.netlify.app/" target='_blank' className='bg-green-400 md:p-3 p-1 text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Project</a>
+                        <a href="https://virtual-assistan.netlify.app/" target='_blank' className='bg-green-400 md:p-3 p-1 text-white rounded-md w-[100px] cursor-pointer font-black p-1'>Project</a>
                         <button className='bg-red-500 md:p-3 p-1 text-white rounded-md  cursor-pointer font-black '>Source Code</button>
                     </div>
                 </div>

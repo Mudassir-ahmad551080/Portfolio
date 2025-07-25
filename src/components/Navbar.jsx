@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pic from "../../public/name.jpg";
+import pic from '../../public/pic.png'
 import cross from '../../public/menu/cross.jpg'
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
