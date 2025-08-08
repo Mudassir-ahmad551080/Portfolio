@@ -11,6 +11,7 @@ import Motion from './components/Motion'
 import { motion, useScroll } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import ResumeButton from './components/ResumeButton'
+import ContactInfo from './components/ContactInfo'
 const App = () => {
   const scrollYprogress = useScroll().scrollYProgress
   const [theme] = useTheme();
@@ -33,6 +34,7 @@ const App = () => {
         <Exprience />
         <hr className='mb-10 m-2 mx-8' />
         <Contact />
+        <ContactInfo/>
         <ResumeButton/>
         <hr className='mb-10 m-2 mx-8' />
         <Footer />
