@@ -30,30 +30,30 @@ const Portfolio = () => {
         {
             img: mongodb,
             title: "MongoDb",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+            desc: "This is small project i will make this in html css and javascript.",
             projectLink: "https://virtual-assistan.netlify.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/assistant"
         },
         {
             img: reactLogo,
             title: "React.Js",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+            desc: "This is E-Commerce project i will make this in React js .",
             projectLink: "https://e-com-xi-black.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/E-Com"
         },
         {
             img: express,
             title: "Express",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
-            projectLink: "https://mudassir-ahmad551080.github.io/Ai-chatbot/",
-            codeLink: "https://github.com/Mudassir-ahmad551080/Ai-chatbot"
+            desc: "I will make this project in html css and Es6 Javascript.",
+            projectLink: "https://myntra-clone-flame-eight.vercel.app/index.html",
+            codeLink: "https://github.com/Mudassir-ahmad551080/myntra-clone"
         },
         {
             img: Redux,
             title: "Redux",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
-            projectLink: "https://virtual-assistan.netlify.app/",
-            codeLink: "#"
+            desc: "I will make this project in Next.js. and Tailwind css",
+            projectLink: "https://next-app-six-iota.vercel.app/",
+            codeLink: "https://github.com/Mudassir-ahmad551080/Next-app"
         },
         {
             img: node,
