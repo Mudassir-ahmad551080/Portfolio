@@ -33,7 +33,7 @@ body{
 /* Dark mode */
 
 #dark{
-    background-color: rgb(8, 7, 7);
+    background-color: rgb(0, 0, 0);
     transition: 0.5s all;
     color: white;
 }
