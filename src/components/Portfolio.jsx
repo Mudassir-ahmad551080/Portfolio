@@ -105,7 +105,7 @@ const Portfolio = () => {
                         }}
                     >
                         <img
-                            className='w-20 h-20 rounded-md'
+                            className='w-20 h-20 animate-pulse transition-all rounded-md'
                             src={project.img}
                             alt={project.title}
                         />
