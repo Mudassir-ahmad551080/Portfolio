@@ -3,6 +3,7 @@ import facebook from '../../public/icon/facebook.jpg'
 import linkdin from '../../public/icon/linkdin.jpg'
 import youtube from '../../public/icon/youtube.jpg'
 import instagram from '../../public/icon/instagram.jpg'
+import Scrool from './Scrool'
 const Footer = () => {
   return (
     <footer>
@@ -37,7 +38,9 @@ const Footer = () => {
           <p className='text-sm'>&copy; 2025 Your Company. All rights reseverd</p>
           <p className='text-sm'>Supportive Partner ❤ Hamza</p>
         </div>
+         <Scrool/>
       </div>
+     
     </footer>
   )
 }
