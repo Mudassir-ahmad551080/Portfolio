@@ -8,7 +8,7 @@ const Scrool = () => {
     });
   };
   return (
-    <div className='bg-black'>
+    <div className=''>
     <FaArrowUp onClick={scroolHandler} className='mb-0 w-10 h-6 animate-pulse cursor-pointer' />
     </div>
   )
