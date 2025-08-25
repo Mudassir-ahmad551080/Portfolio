@@ -48,7 +48,7 @@ function Navbar() {
       <div id={theme} className="max-w-screen-2xl backdrop-blur-lg container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 ">
         <div className="flex justify-between items-center h-16">
           <div className=" flex space-x-2">
-            <img src={pic} className="h-12 w-12 object-cover mt-1 rounded-full" alt="" />
+            <img src='./public/logo.jpg' className="h-12 w-12 object-cover mt-1 rounded-full" alt="" />
             <h1 className="font-semibold text-xl cursor-pointer">
               Mudassi<span className="text-green-500 text-2xl">r</span>
               <p className="text-sm">Web Developer</p>
