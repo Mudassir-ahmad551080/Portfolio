@@ -23,7 +23,7 @@ const App = () => {
      const tl = gsap.timeline();
      tl.from('.stair',{
       height: 0,
-      duration: 0.2,
+      duration: 1,
       stagger: {
         amount: -0.3
       }
