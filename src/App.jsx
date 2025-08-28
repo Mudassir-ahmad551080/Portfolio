@@ -23,7 +23,7 @@ const App = () => {
      const tl = gsap.timeline();
      tl.from('.stair',{
       height: 0,
-      duration: 1,
+      duration: 0.2,
       stagger: {
         amount: -0.3
       }
@@ -36,30 +36,31 @@ const App = () => {
      });
      tl.to(divref.current, {
       opacity: 0,
-      duration: 0.2,
+      duration: 0,
+      delay:-0.1,
       display: 'none'
      });
 
    })
   return (
     <>
-    <div ref={divref} className='h-screen w-full leading-tight flex fixed z-500 top-0 '>
-      <div className=' stair h-full w-1/2 bg-zinc-950'>
+    <div ref={divref} className='h-screen bg-black   w-full leading-tight flex fixed z-500 top-0 '>
+      <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
-       <div className=' stair h-full w-1/2 bg-zinc-950'>
+       <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
-      <div className=' stair h-full w-1/2 bg-zinc-950'>
+      <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
-      <div className=' stair h-full w-1/2 bg-zinc-950'>
+      <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
-      <div className=' stair h-full w-1/2 bg-zinc-950'>
+      <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
-      <div className=' stair h-full w-1/2 bg-zinc-950'>
+      <div className=' stair h-full w-1/2 bg-zinc-800'>
 
       </div>
     </div>
