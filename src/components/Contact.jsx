@@ -62,7 +62,7 @@ function Contact() {
 
   return (
     <>
-      <div id={theme} name='Contact' className="max-w-md dark:text-white  mx-auto p-4 bg-yellow-50 mx-10 rounded shadow-md">
+      <div id={theme} name='Contact' className="max-w-md dark:text-white border  mx-auto p-4 bg-yellow-50 mx-10 rounded shadow-md">
         <h2 className="text-lg font-bold mb-4">Send Your Message</h2>
         <form action='https://getform.io/f/agdldjpb' method="POST" onSubmit={handleSubmit}>
           <div className="mb-4">
