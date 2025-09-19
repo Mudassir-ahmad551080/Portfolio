@@ -58,7 +58,7 @@ const Portfolio = () => {
         {
             img: node,
             title: "Node.Js",
-            desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+            desc: "This is the Full Stack Ecommerce Real world Project in MERN Stack",
             projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce"
         }
