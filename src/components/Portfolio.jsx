@@ -59,8 +59,8 @@ const Portfolio = () => {
             img: node,
             title: "Node.Js",
             desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
-            projectLink: "#",
-            codeLink: "#"
+            projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
+            codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce"
         }
     ];
 
