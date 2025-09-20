@@ -111,7 +111,7 @@ const Home = () => {
                     </div>
                     <div className='mt-4 md:mt-8 space-y-2'>
                         <h1 className='font-bold'>Currently Working On</h1>
-                        <div id='for-image-icon' className='flex space-x-3 flex-wrap'>
+                        <div id='for-image-icon' className='flex  space-x-3 flex-wrap'>
                             {techIcons.map((src, index) => (
                                 <motion.img
                                     key={index}
@@ -121,7 +121,7 @@ const Home = () => {
                                     animate={inViewIcons ? "visible" : "hidden"}
                                     src={src}
                                     alt={`tech-${index}`}
-                                    className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer'
+                                    className='w-8 h-8  hover:scale-110 duration-200 cursor-pointer'
                                 />
                             ))}
                         </div>
