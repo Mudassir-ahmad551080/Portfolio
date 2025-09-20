@@ -137,8 +137,8 @@ const Home = () => {
             >
                 <motion.img
                     id="hacker"
-                    className="md:w-[400px] w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
-                    src='./mudassir.png'
+                    className="md:w-[500px] bg-fixed w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                    src='./khan.jpg'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={inViewImage ? { scale: 1, opacity: 1 } : {}}

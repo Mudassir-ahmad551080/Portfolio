@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import pic from '../../public/pic.png'
 import react from '../../public/react.png'
-import cross from '../../public/menu/cross.jpg'
-import logo from '../../public/logo.jpg'
+// import cross from '../../public/menu/cross.jpg'
+// import logo from '../../public/logo.jpg'
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
