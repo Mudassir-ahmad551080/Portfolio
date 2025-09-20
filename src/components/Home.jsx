@@ -64,7 +64,7 @@ const Home = () => {
                 >
                     Hello, I&apos;m
                     <ReactTyped
-                        className='ml-2 text-red-600'
+                        className='ml-2 text-purple-700'
                         strings={["Programmer", "Developer", "Coder", "Web Designer"]}
                         typeSpeed={40}
                         backSpeed={50}
