@@ -84,7 +84,7 @@ const Home = () => {
                 {/* SOCIAL + TECH ICONS */}
                 <div 
                     ref={refIcons} 
-                    className='flex justify-between mt-10 items-center flex-col md:flex-row'
+                    className='flex  text-center  justify-between mt-10 items-center flex-col md:flex-row'
                 >
                     <div className='space-y-1 text-center'>
                         <h1 className='text-xl font-bold'>Available On</h1>
@@ -109,7 +109,7 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                    <div className='mt-4 md:mt-8 space-y-2'>
+                    <div className='md:mt-1  md:mb-1 mt-7'>
                         <h1 className='font-bold'>Currently Working On</h1>
                         <div id='for-image-icon' className='flex  space-x-3 flex-wrap'>
                             {techIcons.map((src, index) => (
