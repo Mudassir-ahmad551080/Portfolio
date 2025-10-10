@@ -93,7 +93,7 @@ const Portfolio = () => {
                         variants={cardVariants}
                         initial="hidden"
                         animate={inView ? "visible" : "hidden"}
-                        className='bg-yellow-50 border rounded-md hover:bg-black hover:text-white 
+                        className='bg-yellow-50 hover:shadow-[0_0_10px_10px_rgba(0,255,255,0.3)] border rounded-md hover:bg-black hover:text-white 
                                    cursor-pointer shadow-md hover:scale-105 duration-300 
                                    h-auto w-72 md:w-78 p-5 mt-10'
                         style={{ transformStyle: "preserve-3d" }}
@@ -105,7 +105,7 @@ const Portfolio = () => {
                         }}
                     >
                         <img
-                            className='w-20 h-20 animate-pulse transition-all rounded-md'
+                            className='w-20 h-20  animate-pulse transition-all rounded-md'
                             src={project.img}
                             alt={project.title}
                         />
