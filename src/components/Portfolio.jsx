@@ -1,11 +1,13 @@
 import React from 'react';
-import mongodb from '../img/mongo.png.svg';
-import reactLogo from '../img/react.png.png';
-import Redux from '../img/redux.png';
+import virtual from '../img/e-2.png';
+import ecommerce1  from '../img/e-1.png';
+import ecommerce3 from '../img/e-3.png';
+import myntra from '../img/myntra.png';
+import next from '../img/next.png';
 import node from '../img/node.png';
 import express from '../img/express.png';
 import { useTheme } from '../context/ThemeContext';
-import { motion } from 'framer-motion';
+import { m, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Portfolio = () => {
@@ -28,36 +30,36 @@ const Portfolio = () => {
 
     const projects = [
         {
-            img: mongodb,
-            title: "MongoDb",
+            img: virtual,
+            title: "Virtual Assistant",
             desc: "This is small project i will make this in html css and javascript.",
             projectLink: "https://virtual-assistan.netlify.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/assistant"
         },
         {
-            img: reactLogo,
-            title: "React.Js",
+            img: ecommerce1,
+            title: "E-Commerce-react",
             desc: "This is E-Commerce project i will make this in React js .",
             projectLink: "https://e-com-xi-black.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/E-Com"
         },
         {
-            img: express,
-            title: "Express",
+            img: myntra,
+            title: "myntra",
             desc: "I will make this project in html css and Es6 Javascript.",
             projectLink: "https://myntra-clone-flame-eight.vercel.app/index.html",
             codeLink: "https://github.com/Mudassir-ahmad551080/myntra-clone"
         },
         {
-            img: Redux,
-            title: "Redux",
+            img: next,
+            title: "E-commerce-next",
             desc: "I will make this project in Next.js. and Tailwind css",
             projectLink: "https://next-app-six-iota.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/Next-app"
         },
         {
-            img: node,
-            title: "Node.Js",
+            img: ecommerce3,
+            title: "E-Commerce-MERN",
             desc: "This is the Full Stack Ecommerce Real world Project in MERN Stack",
             projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce"
@@ -95,7 +97,7 @@ const Portfolio = () => {
                         animate={inView ? "visible" : "hidden"}
                         className='bg-yellow-50 hover:shadow-[0_0_10px_10px_rgba(0,255,255,0.3)] border rounded-md hover:bg-black hover:text-white 
                                    cursor-pointer shadow-md hover:scale-105 duration-300 
-                                   h-auto w-72 md:w-78 p-5 mt-10'
+                                   h-auto w-74 md:w-110 p-5 mt-10'
                         style={{ transformStyle: "preserve-3d" }}
                         whileHover={{
                             rotateY: 10,
@@ -105,11 +107,11 @@ const Portfolio = () => {
                         }}
                     >
                         <img
-                            className='w-20 h-20  animate-pulse transition-all rounded-md'
+                            className='w-full h-40   transition-all rounded-md'
                             src={project.img}
                             alt={project.title}
                         />
-                        <h1 className='font-bold text-xl font-sans'>{project.title}</h1>
+                        <h1 className='font-bold mt-2 text-xl font-sans'>{project.title}</h1>
                         <p className='mt-2'>{project.desc}</p>
                         <div className='flex space-x-4 mt-5 flex-wrap'>
                             {project.projectLink && (
