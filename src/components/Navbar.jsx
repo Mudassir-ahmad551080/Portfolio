@@ -7,7 +7,8 @@ import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
 import { RiMoonClearFill } from "react-icons/ri";
-import { IoSunny } from "react-icons/io5";
+import sun from '../img/sun.png'
+import moon from '../img/moon.png'
 function Navbar() {
   const [menu, setMenu] = useState(false);
   const navItems = [
@@ -58,7 +59,7 @@ function Navbar() {
           </div>
           {/* desktop navbar */}
           <div onClick={handleChange} id={theme} className='md:ml-92 ml-10  mt-1 md:mt-0 cursor-pointer'>
-            {theme === 'ligth' ? (<RiMoonClearFill size={30} />) : (<IoSunny size={30} />)}
+            {theme === 'ligth' ? (<img src={sun} height={10} width={40}/>) : (<img src={moon} height={10} width={40}/>)}
           </div>
           <div>
             <ul className="hidden md:flex space-x-8">
