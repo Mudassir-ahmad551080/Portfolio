@@ -4,8 +4,7 @@ import ecommerce1  from '../img/e-1.png';
 import ecommerce3 from '../img/e-3.png';
 import myntra from '../img/myntra.png';
 import next from '../img/next.png';
-import node from '../img/node.png';
-import express from '../img/express.png';
+import resume from '../img/resume.png'
 import { useTheme } from '../context/ThemeContext';
 import { m, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -32,21 +31,21 @@ const Portfolio = () => {
         {
             img: virtual,
             title: "Virtual Assistant",
-            desc: "This is small project i will make this in html css and javascript.",
+            desc: "I developed a voice-controlled virtual assistant using HTML, CSS, and JavaScript. It recognizes user commands to open websites like YouTube or Google and answers general questions using speech recognition and dynamic search integration.",
             projectLink: "https://virtual-assistan.netlify.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/assistant"
         },
         {
             img: ecommerce1,
             title: "E-Commerce-react",
-            desc: "This is E-Commerce project i will make this in React js .",
+            desc: "I built a fully functional eCommerce web app using React.js featuring product listings, responsive design, smooth scroll animations, and a beautiful UI. Users can view product details, add or remove items from the cart, and see updated totals dynamically.",
             projectLink: "https://e-com-xi-black.vercel.app/",
             codeLink: "https://github.com/Mudassir-ahmad551080/E-Com"
         },
         {
             img: myntra,
             title: "myntra",
-            desc: "I will make this project in html css and Es6 Javascript.",
+            desc: "I created a Myntra Clone using modern web technologies with a beautiful, responsive UI. It includes dark and light mode functionality, allowing users to add or remove products from the cart and view the total dynamically.",
             projectLink: "https://myntra-clone-flame-eight.vercel.app/index.html",
             codeLink: "https://github.com/Mudassir-ahmad551080/myntra-clone"
         },
@@ -97,7 +96,7 @@ const Portfolio = () => {
                         animate={inView ? "visible" : "hidden"}
                         className='bg-yellow-50 hover:shadow-[0_0_10px_10px_rgba(0,255,255,0.3)] border rounded-md hover:bg-black hover:text-white 
                                    cursor-pointer shadow-md hover:scale-105 duration-300 
-                                   h-auto w-74 md:w-110 p-5 mt-10'
+                                   h-auto w-80 md:w-120 p-5 mt-10'
                         style={{ transformStyle: "preserve-3d" }}
                         whileHover={{
                             rotateY: 10,

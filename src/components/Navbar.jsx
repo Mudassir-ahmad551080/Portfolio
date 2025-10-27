@@ -6,7 +6,6 @@ import react from '../../public/react.png'
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
-import { RiMoonClearFill } from "react-icons/ri";
 import sun from '../img/sun.png'
 import moon from '../img/moon.png'
 function Navbar() {
