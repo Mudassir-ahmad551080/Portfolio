@@ -64,7 +64,7 @@ const Home = () => {
                 >
                     Hello, I&apos;m
                     <ReactTyped
-                        className='ml-2 text-purple-700'
+                        className='ml-2 text-cyan-400'
                         strings={["Programmer", "Developer", "Coder", "Full Stack developer","Generative AI developer"]}
                         typeSpeed={40}
                         backSpeed={50}
@@ -133,11 +133,11 @@ const Home = () => {
             <div 
                 ref={refImage} 
                 id='img-div' 
-                className='md:mt-25 md:ml-32 md:order-2 order-1 m-8 mt-28 flex'
+                className='md:mt-25 md:ml-37c md:order-2 order-1 m-8 mt-28 flex'
             >
                 <motion.img
                     id="hacker"
-                    className="md:w-[500px] bg-fixed w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                    className="md:w-[400px]  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
                     src='./mudassir.png'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}

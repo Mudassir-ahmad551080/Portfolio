@@ -6,7 +6,7 @@ const ResumeButton = () => {
     <div className="fixed bottom-4 right-6 z-50">
       <a href="/mudassir.pdf" download="Mudassir_Ahmad_Resume.pdf">
         <button
-          className="animate-pulse hover:animate-none glow-button"
+          className="animate-bounce hover:animate-none glow-button"
         >
           📄 Download Resume
         </button>
