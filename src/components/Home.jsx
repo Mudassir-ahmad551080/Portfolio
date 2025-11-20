@@ -14,7 +14,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Home = () => {
     const [theme] = useTheme();
-    const techIcons = [pic, second, third, forth];
+    const techIcons = [forth, third, pic, second];
     const socialLinks = [
         { href: "https://facebook.com/", src: facebook, alt: "Facebook" },
         { href: "https://pk.linkedin.com/", src: linkdin, alt: "LinkedIn" },
