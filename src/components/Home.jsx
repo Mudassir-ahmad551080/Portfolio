@@ -65,7 +65,7 @@ const Home = () => {
                     Hello, I&apos;m
                     <ReactTyped
                         className='ml-2 text-cyan-400'
-                        strings={["Programmer", "Developer", "Coder", "Full Stack developer","Generative AI developer"]}
+                        strings={["Programmer", "Developer", "Coder", "Full Stack developer","MERN stack Developer"]}
                         typeSpeed={40}
                         backSpeed={50}
                         loop
@@ -137,7 +137,7 @@ const Home = () => {
             >
                 <motion.img
                     id="hacker"
-                    className="md:w-[400px]  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                    className="md:w-[400px] md:ml-20  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
                     src='./mudassir.png'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}
