@@ -6,39 +6,50 @@ import tailwindcss from '../../public/language/tailwind-css.svg'
 import react from '../../public/language/react.jpg'
 import { useTheme } from '../context/ThemeContext';
 import Slider from '../components/Slider.jsx'
+
 const Exprience = () => {
     const [theme] = useTheme()
+
+    // Define language cards to avoid repeating code
+    const languages = [
+        { img: js, name: "Javascript" },
+        { img: html, name: "HTML" },
+        { img: css, name: "CSS" },
+        { img: tailwindcss, name: "Tailwind Css" },
+        { img: react, name: "React" },
+    ];
+
     return (
-        <div id={theme} name='Experiance' className='p-5 items-center md:p-10   mx-auto h-a container px-4  flex flex-wrap gap-10  md:px-20  md:p-10'>
+        <div 
+            id={theme} 
+            name='Experiance' 
+            // FIX: Force background transparent so stars show through
+            style={{ backgroundColor: 'transparent' }}
+            className='p-5 items-center md:p-10 mx-auto container px-4 flex flex-wrap gap-10 md:px-20 relative z-10'
+        >
             <div className='space-y-1 ml-20 md:ml-0'>
                 <h1 className='font-bold text-2xl mt-10'>Experiences</h1>
             </div>
-            <div className=' w-screen flex flex-wrap md:gap-10 items-center'>
-                <div id={theme} className='bg-yellow-50 border ml-16 md:ml-0 items-center text-center  cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
-                    <img className='rounded-md w-50 h-50' src={js} alt="" />
-                    <h2 className='mt-5'>Javascript</h2>
+
+            <div className='w-screen flex flex-wrap md:gap-10 items-center justify-center md:justify-start'>
+                {languages.map((lang, index) => (
+                    <div 
+                        key={index}
+                        // FIX: Dynamic background and text colors
+                        className={`border items-center text-center cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md p-5 mt-10 backdrop-blur-sm
+                            ${theme === 'ligth' 
+                                ? 'bg-white/80 text-black border-gray-200' 
+                                : 'bg-zinc-900/80 text-white border-zinc-700'
+                            }`}
+                    >
+                        <img className='rounded-md w-full h-40 object-contain' src={lang.img} alt={lang.name} />
+                        <h2 className='mt-5 font-semibold'>{lang.name}</h2>
+                    </div>
+                ))}
+                
+                <div className="w-full mt-10">
+                    <Slider/>
                 </div>
-                {/* for html Image */}
-                <div id={theme} className='bg-yellow-50 border ml-16 md:ml-0 items-center text-center   cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
-                    <img className='rounded-md w-50 h-50' src={html} alt="" />
-                    <h2 className='mt-5'>HTML</h2>
-                </div>
-                {/* for Express Image */}
-                <div id={theme} className='bg-yellow-50 border ml-16 md:ml-0 items-center text-center   cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
-                    <img className='rounded-md w-50 h-50' src={css} alt="" />
-                    <h2 className='mt-5'>CSS</h2>
-                </div>
-                {/* for Redux Image */}
-                <div id={theme} className='bg-yellow-50  border ml-16 md:ml-0 items-center text-center   cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
-                    <img className='rounded-md w-50 h-50' src={tailwindcss} alt="" />
-                    <h2 className='mt-5'>Tailwind Css</h2>
-                </div>
-                {/* for Node js Image */}
-                <div id={theme} className='bg-yellow-50 border ml-16 md:ml-0  items-center text-center  cursor-pointer shadow-md hover:scale-105 duration-200 h-auto w-54 md:w-60 rounded-md cursor-pointer  shadow-md p-5 mt-10 ml-8 md:ml-0'>
-                    <img className='rounded-md w-50 h-50' src={react} alt="" />
-                    <h2 className='mt-5'>React</h2>
-                </div>
-                <Slider/>
             </div>
         </div>
     )

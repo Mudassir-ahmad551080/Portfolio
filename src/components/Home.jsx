@@ -41,7 +41,13 @@ const Home = () => {
     const [refImage, inViewImage] = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
-        <div name='Home' id={theme} className='p-3 w-full flex md:flex-row flex-col'>
+        <div 
+            name='Home' 
+            id={theme} 
+            // FIX: Force transparent background so stars show through
+            style={{ backgroundColor: 'transparent' }} 
+            className='p-3 w-full flex md:flex-row flex-col'
+        >
             {/* LEFT SIDE TEXT */}
             <div 
                 ref={refText} 
