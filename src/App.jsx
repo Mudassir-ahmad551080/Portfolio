@@ -27,7 +27,7 @@ const App = () => {
   useGSAP(function(){
      // ... your existing GSAP code ...
      const tl = gsap.timeline();
-     tl.from('.stair',{ height: 0, duration: 0.2, stagger: { amount: -0.3 } });
+     tl.from('.stair',{ height: 0, duration: 0.8, stagger: { amount: -0.3 } });
      tl.to('.stair',{ y: '100%', stagger:{ amount: -0.3 } });
      tl.to(divref.current, { opacity: 0, duration: 0, delay:-0.1, display: 'none' });
   })
