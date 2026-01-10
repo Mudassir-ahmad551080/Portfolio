@@ -15,7 +15,7 @@ const StarBackground = ({ theme }) => {
     canvas.height = height;
 
     const stars = [];
-    const numStars = 200;
+    const numStars = 300;
     const mouse = { x: width / 2, y: height / 2 };
 
     // Set colors based on theme
@@ -29,7 +29,7 @@ const StarBackground = ({ theme }) => {
       stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 1.5,
+        size: Math.random() * 1.7,
         speedX: (Math.random() - 0.5) * 0.5,
         speedY: (Math.random() - 0.5) * 0.5,
       });

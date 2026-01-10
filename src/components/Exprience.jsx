@@ -5,7 +5,6 @@ import html from '../../public/language/html.png';
 import tailwindcss from '../../public/language/tailwind-css.svg'
 import react from '../../public/language/react.jpg'
 import { useTheme } from '../context/ThemeContext';
-import Slider from '../components/Slider.jsx'
 
 const Exprience = () => {
     const [theme] = useTheme()
@@ -47,9 +46,7 @@ const Exprience = () => {
                     </div>
                 ))}
                 
-                <div className="w-full mt-10">
-                    <Slider/>
-                </div>
+                
             </div>
         </div>
     )

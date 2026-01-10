@@ -72,7 +72,7 @@ const Portfolio = () => {
     return (
         <div
             id={theme}
-            name='Portfolio'
+            name='Projects'
             // FIX: Ensure container is transparent so stars show
             style={{ backgroundColor: 'transparent' }}
             className='p-10 mx-auto container flex flex-col gap-10 md:px-20 relative z-10'
