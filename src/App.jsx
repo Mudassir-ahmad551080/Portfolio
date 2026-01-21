@@ -3,7 +3,6 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
 import Portfolio from './components/Portfolio'
-import Exprience from './components/Exprience'
 import gsap from 'gsap'
 import Footer from './components/Footer'
 import Contact from './components/Contact'
@@ -66,7 +65,6 @@ const App = () => {
         <hr className=' mt-0 ' />
         <About />
         <Portfolio />
-        <Exprience />
         <hr className='mb-10 m-2 mx-8' />
         <Contact />
         <ContactInfo/>
