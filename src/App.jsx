@@ -14,6 +14,7 @@ import ResumeButton from './components/ResumeButton'
 import ContactInfo from './components/ContactInfo'
 import { useGSAP } from '@gsap/react'
 import StarBackground from './components/StarsBackground.jsx'
+import Skills from './components/Skills.jsx'
 
 // 1. Import the new component
 
@@ -65,6 +66,7 @@ const App = () => {
         <hr className=' mt-0 ' />
         <About />
         <Portfolio />
+        <Skills/>
         <hr className='mb-10 m-2 mx-8' />
         <Contact />
         <ContactInfo/>
