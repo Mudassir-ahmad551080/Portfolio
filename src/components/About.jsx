@@ -6,11 +6,11 @@ const About = () => {
             <div id='container' className=''>
                 <div id='first' className='space-y-4'>
                     <h1 className='text-3xl font-bold'>About</h1>
-                    <p className='sm:text-justify'>hello my name is mudassir and i am a full stack developer and i am a student of bs software engineering from <span className='text-red-500 font-bold'>U</span>niverstiy of <span className='text-green-500 font-bold'>I</ span>slamia <span className='text-red-500 font-bold'>C</span>ollege <span className='text-green-500 font-bold'>P</span>eshawar  </p>
+                    <p className='sm:text-justify'>"Hello! I’m Mudassir, a Full Stack Developer currently pursuing a BS in Software Engineering. I specialize in turning creative ideas into robust, production-ready code." <span className='text-red-500 font-bold'>U</span>niverstiy of <span className='text-green-500 font-bold'>I</ span>slamia <span className='text-red-500 font-bold'>C</span>ollege <span className='text-green-500 font-bold'>P</span>eshawar  </p>
                 </div>
                 <div id='second' className='mt-8 space-y-4'>
                     <h1 className='text-green-500 font-bold text-2xl'>Education and Training</h1>
-                    <p>Bachelor of Software Engineering
+                    <p>Bachelor In Software Engineering
                         [Islamia College Peshawar], [near UOP]
                         [2026]
 

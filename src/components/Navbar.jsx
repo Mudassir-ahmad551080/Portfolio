@@ -35,7 +35,7 @@ function Navbar() {
             <img src={react} className="h-12 w-12 animate-spin duration-700 transition-all hover:animate-none cursor-pointer hover:shadow-[0_0_20px_10px_rgba(0,255,255,0.6)] object-cover mt-1 rounded-full" alt="" />
             <h1 className="font-semibold text-xl cursor-pointer">
               Mudassi<span className="text-green-500 text-2xl">r</span>
-              <p className="text-sm">Web Developer</p>
+              <p className="text-sm">Software Developer</p>
             </h1>
           </div>
           

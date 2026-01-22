@@ -84,7 +84,7 @@ const Home = () => {
                     animate={inViewText ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.4 }}
                 >
-                   a seasoned MERN stack developer, I possess a strong proficiency in designing, developing, and deploying scalable, efficient, and secure web applications. With a keen eye for detail and a passion for staying up-to-date with the latest industry trends, I deliver high-quality solutions that meet and exceed client expectations.
+                  I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don’t just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
                 </motion.p>
 
                 {/* SOCIAL + TECH ICONS */}
