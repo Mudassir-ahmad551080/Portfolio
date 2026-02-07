@@ -8,13 +8,14 @@ import {
   FaNodeJs, 
   FaGitAlt, 
   FaGithub, 
-  FaDocker 
+  FaDocker,
 } from 'react-icons/fa';
 import { 
   SiNextdotjs, 
   SiTypescript, 
   SiTailwindcss, 
   SiExpress, 
+  SiPostman,
   SiMongodb 
 } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
@@ -46,6 +47,7 @@ const skillsData = [
       { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
       { name: "GitHub", icon: <FaGithub className="text-gray-500" /> },
       { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+      { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
     ]
   }
 ];
