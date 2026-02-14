@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 
 const ThemeProvider = ({ children }) => {
   // Retrieve the theme from localStorage or set to 'light' by default
-  const savedTheme = localStorage.getItem("theme") || "light";
+  const savedTheme = localStorage.getItem("theme") || "dark";
   const [theme, setTheme] = useState(savedTheme);
 
   // Whenever the theme changes, save it to localStorage
