@@ -116,9 +116,6 @@ const Portfolio = () => {
         
         {/* Header */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
           className="mb-24 text-center"
         >
           <h2 id={theme} className={`text-5xl md:text-6xl font-extrabold mb-6 tracking-tight `}>
