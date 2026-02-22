@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useInView } from 'react-intersection-observer';
 import mudassir from '../../public/mudassir.png'
+import Chatbot from './Chatbot';
 
 const Home = () => {
     const [theme] = useTheme();
@@ -42,16 +43,16 @@ const Home = () => {
     const [refImage, inViewImage] = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
-        <div 
-            name='Home' 
-            id={theme} 
+        <div
+            name='Home'
+            id={theme}
             // FIX: Force transparent background so stars show through
-            style={{ backgroundColor: 'transparent' }} 
+            style={{ backgroundColor: 'transparent' }}
             className='p-3 w-full flex md:flex-row flex-col'
         >
             {/* LEFT SIDE TEXT */}
-            <div 
-                ref={refText} 
+            <div
+                ref={refText}
                 className='h-auto mt-12 md:mt-36 md:order-1 order-2 max-w-150 m-2 md:ml-20 space-y-1'
             >
                 <motion.h2
@@ -72,7 +73,7 @@ const Home = () => {
                     Hello, I&apos;m
                     <ReactTyped
                         className='ml-2 text-cyan-400'
-                        strings={["Programmer", "Developer", "Coder", "Full Stack developer","MERN stack Developer"]}
+                        strings={["Programmer", "Developer", "Coder", "Full Stack developer", "MERN stack Developer"]}
                         typeSpeed={40}
                         backSpeed={50}
                         loop
@@ -85,12 +86,12 @@ const Home = () => {
                     animate={inViewText ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.4 }}
                 >
-                  I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don’t just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
+                    I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don’t just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
                 </motion.p>
 
                 {/* SOCIAL + TECH ICONS */}
-                <div 
-                    ref={refIcons} 
+                <div
+                    ref={refIcons}
                     className='flex  text-center  justify-between mt-10 items-center flex-col md:flex-row'
                 >
                     <div className='space-y-1 text-center'>
@@ -137,9 +138,9 @@ const Home = () => {
             </div>
 
             {/* RIGHT SIDE IMAGE */}
-            <div 
-                ref={refImage} 
-                id='img-div' 
+            <div
+                ref={refImage}
+                id='img-div'
                 className='md:mt-25 md:ml-37c md:order-2 order-1 m-8 mt-28 flex'
             >
                 <motion.img
@@ -152,6 +153,7 @@ const Home = () => {
                     transition={{ duration: 1.5, type: "spring" }}
                 />
             </div>
+            <Chatbot/>
         </div>
     );
 };
