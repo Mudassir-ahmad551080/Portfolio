@@ -10,6 +10,7 @@ import ecommerce1 from '../img/e-1.png';
 import ecommerce3 from '../img/e-3.png';
 import myntra from '../img/myntra.png';
 import next from '../img/next.png';
+import resume from '../img/resume.png'
 
 /* --- 3D TILT CARD WRAPPER --- */
 const TiltCard = ({ children, className }) => {
@@ -62,10 +63,18 @@ const Portfolio = () => {
 
   const projects = [
     {
+      img: resume,
+      title: "Ai Driven Resume Builder Resume Analyzer Software",
+      desc: "Build a full stack softawre in MERN stack and Gen Ai ",
+      tech: ["Gen Ai","MongoDB", "Express", "React", "Node", "Redux","Groq Sdk","Tailwind Css"],
+      projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
+      codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce",
+    },
+    {
       img: ecommerce3,
       title: "MERN E-Commerce Ecosystem",
       desc: "Production-grade platform with REST API, JWT auth, and complex MongoDB relationships. Handles real-time inventory and payments.",
-      tech: ["MongoDB", "Express", "React", "Node", "Redux"],
+      tech: ["MongoDB", "Express", "React", "Node", "Redux","Tailwind Css"],
       projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
       codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce",
     },
