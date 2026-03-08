@@ -53,7 +53,7 @@ const Portfolio = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const isLight = theme === 'light';
-
+  
   // Dynamic Styles
   const bgBase = isLight ? 'bg-gray-50' : '';
   const cardBg = isLight ? 'bg-white/90 border-gray-200' : 'bg-gray-800/80 border-gray-700';
@@ -64,28 +64,17 @@ const Portfolio = () => {
   const projects = [
     {
       img: resume,
-      title: "AI-Driven Resume Builder, Resume Analyzer & Interview Prep Platform",
-      desc: "A full-stack intelligent career platform built with the MERN stack and Generative AI. Features include AI-powered resume generation with real-time feedback, ATS score analysis, tailored job description matching, and an AI interview coach with dynamic Q&A sessions — all designed to help users land their dream job faster.",
-      tech: [
-        "Generative AI",
-        "MongoDB",
-        "Express.js",
-        "React.js",
-        "Node.js",
-        "Redux Toolkit",
-        "Groq SDK",
-        "Tailwind CSS",
-        "REST API",
-        "JWT Auth",
-      ],
-      projectLink: "https://resume-frontend-psi-one.vercel.app",
-      codeLink: "https://github.com/Mudassir-ahmad551080/Ai-Driven-Resume-Builder-Software",
+      title: "Ai Driven Resume Builder Resume Analyzer Software",
+      desc: "Build a full stack softawre in MERN stack and Gen Ai ",
+      tech: ["Gen Ai","MongoDB", "Express", "React", "Node", "Redux","Groq Sdk","Tailwind Css"],
+      projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
+      codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce",
     },
     {
       img: ecommerce3,
       title: "MERN E-Commerce Ecosystem",
       desc: "Production-grade platform with REST API, JWT auth, and complex MongoDB relationships. Handles real-time inventory and payments.",
-      tech: ["MongoDB", "Express", "React", "Node", "Redux", "Tailwind Css"],
+      tech: ["MongoDB", "Express", "React", "Node", "Redux","Tailwind Css"],
       projectLink: "https://e-commerce-frontend-gray-ten.vercel.app/",
       codeLink: "https://github.com/Mudassir-ahmad551080/E-Commerce",
     },
@@ -125,7 +114,7 @@ const Portfolio = () => {
 
   return (
     <div name="Projects" className={`w-full min-h-screen py-24 px-4 md:px-12 relative overflow-hidden `}>
-
+      
       {/* Background Decor (Glow) */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <div className={`absolute top-20 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20 bg-green-500`} />
@@ -133,21 +122,21 @@ const Portfolio = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-
+        
         {/* Header */}
-        <motion.div
+        <motion.div 
           className="mb-24 text-center"
         >
           <h2 id={theme} className={`text-5xl md:text-6xl font-extrabold mb-6 tracking-tight `}>
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Work</span>
           </h2>
           <p className={`text-lg max-w-2xl mx-auto ${subText}`}>
-            Exploring the intersection of design and engineering through full-stack applications.
+             Exploring the intersection of design and engineering through full-stack applications.
           </p>
         </motion.div>
 
         <div ref={ref} className="space-y-32">
-
+          
           {/* --- PROJECTS LOOP --- */}
           {projects.map((project, index) => {
             // Zig-Zag Logic: Swap order for odd numbers
@@ -155,23 +144,23 @@ const Portfolio = () => {
 
             return (
               <TiltCard key={index} className="perspective-1000">
-                <motion.div
-                  id={theme}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7 }}
-                  className={`group relative rounded-3xl border shadow-2xl overflow-hidden backdrop-blur-md `}
+                <motion.div 
+                   id={theme}
+                   initial={{ opacity: 0, y: 50 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true, margin: "-100px" }}
+                   transition={{ duration: 0.7 }}
+                   className={`group relative rounded-3xl border shadow-2xl overflow-hidden backdrop-blur-md `}
                 >
                   <div className="flex flex-col lg:flex-row h-full">
-
+                    
                     {/* IMAGE SECTION 
                        Conditional Class: 'lg:order-last' pushes image to right on odd rows 
                     */}
                     <div className={`lg:w-3/5 relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-8 lg:p-12 flex items-center justify-center ${!isEven ? 'lg:order-last' : ''}`}>
-
-                      {/* Isometric Image Effect */}
-                      <motion.img
+                       
+                       {/* Isometric Image Effect */}
+                       <motion.img 
                         id={theme}
                         src={project.img}
                         alt={project.title}
@@ -185,16 +174,16 @@ const Portfolio = () => {
                     </div>
 
                     {/* INFO SECTION */}
-                    <div className="lg:w-2/4 p-8 lg:p-12 flex flex-col justify-center relative z-20">
-
+                    <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center relative z-20">
+                      
                       <div className="flex items-center gap-2 mb-4">
                         <span className="w-12 h-1 bg-green-500 rounded-full"></span>
                         <span className="text-green-500 font-bold tracking-widest uppercase text-xs">Project {index + 1}</span>
                       </div>
-
-                      <h3 className={`text-2xl lg:text-3xl font-bold mb-4 `}>{project.title}</h3>
+                      
+                      <h3 className={`text-3xl lg:text-4xl font-bold mb-4 `}>{project.title}</h3>
                       <p className={`text-lg leading-relaxed mb-8 `}>{project.desc}</p>
-
+                      
                       {/* Tech Stack Pills */}
                       <div className="flex flex-wrap gap-2 mb-10">
                         {project.tech.map((tech, i) => (
@@ -206,12 +195,12 @@ const Portfolio = () => {
 
                       <div className="flex gap-3 mt-auto">
                         <a href={project.projectLink} target="_blank" rel="noreferrer"
-                          className={`flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white shadow-lg shadow-green-500/30 hover:scale-105 transition-transform ${accentGradient}`}>
-                          <FaExternalLinkAlt /> Live Demo
+                           className={`flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white shadow-lg shadow-green-500/30 hover:scale-105 transition-transform ${accentGradient}`}>
+                           <FaExternalLinkAlt /> Live Demo
                         </a>
                         <a href={project.codeLink} target="_blank" rel="noreferrer"
-                          className={`flex items-center gap-2 px-8 py-4 border rounded-xl font-bold transition-all hover:bg-gray-100 dark:hover:bg-gray-800`}>
-                          <FaGithub /> Source Code
+                           className={`flex items-center gap-2 px-8 py-4 border rounded-xl font-bold transition-all hover:bg-gray-100 dark:hover:bg-gray-800`}>
+                           <FaGithub /> Source Code
                         </a>
                       </div>
 
