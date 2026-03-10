@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pic from '../../public/react.png';
 import second from '../../public/node.png';
 import third from '../../public/express.png';
@@ -7,12 +7,36 @@ import facebook from '../../public/icon/facebook.jpg';
 import linkdin from '../../public/icon/linkdin.jpg';
 import youtube from '../../public/icon/youtube.jpg';
 import instagram from '../../public/icon/instagram.jpg';
-import { ReactTyped } from "react-typed";
+import { ReactTyped } from "react-typed";   // ✅ Fix 1: Named import
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useInView } from 'react-intersection-observer';
-import mudassir from '../../public/mudassir.png'
+import mudassir from '../../public/mudassir.png';
 import Chatbot from './Chatbot';
+
+/* Reusable optimized image with shimmer + fade-in */
+const OptimizedImg = ({ src, alt, className, isEager = false, width, height }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className="relative" style={{ width, height }}>
+      {!loaded && (
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 dark:from-gray-700 dark:to-gray-900 animate-pulse" />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        loading={isEager ? 'eager' : 'lazy'}
+        fetchpriority={isEager ? 'high' : 'auto'}
+        decoding="async"
+        width={width}
+        height={height}
+        onLoad={() => setLoaded(true)}
+        className={`transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+      />
+    </div>
+  );
+};
 
 const Home = () => {
     const [theme] = useTheme();
@@ -29,15 +53,10 @@ const Home = () => {
         visible: i => ({
             opacity: 1,
             y: 0,
-            transition: {
-                delay: i * 0.2,
-                duration: 0.6,
-                type: "spring"
-            }
+            transition: { delay: i * 0.2, duration: 0.6, type: "spring" }
         })
     };
 
-    // Intersection Observer Hook for triggering animations
     const [refText, inViewText] = useInView({ triggerOnce: true, threshold: 0.2 });
     const [refIcons, inViewIcons] = useInView({ triggerOnce: true, threshold: 0.2 });
     const [refImage, inViewImage] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -46,7 +65,6 @@ const Home = () => {
         <div
             name='Home'
             id={theme}
-            // FIX: Force transparent background so stars show through
             style={{ backgroundColor: 'transparent' }}
             className='p-3 w-full flex md:flex-row flex-col'
         >
@@ -86,13 +104,13 @@ const Home = () => {
                     animate={inViewText ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.4 }}
                 >
-                    I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don’t just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
+                    I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don't just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
                 </motion.p>
 
                 {/* SOCIAL + TECH ICONS */}
                 <div
                     ref={refIcons}
-                    className='flex  text-center  justify-between mt-10 items-center flex-col md:flex-row'
+                    className='flex text-center justify-between mt-10 items-center flex-col md:flex-row'
                 >
                     <div className='space-y-1 text-center'>
                         <h1 className='text-xl font-bold'>Available On</h1>
@@ -107,9 +125,11 @@ const Home = () => {
                                     className='list-none'
                                 >
                                     <a href={link.href} target='_blank' rel="noopener noreferrer">
-                                        <img
+                                        <OptimizedImg
                                             src={link.src}
                                             alt={link.alt}
+                                            width={40}
+                                            height={40}
                                             className='w-10 h-10 rounded-full hover:scale-110 duration-200'
                                         />
                                     </a>
@@ -117,43 +137,56 @@ const Home = () => {
                             ))}
                         </div>
                     </div>
-                    <div className='md:mt-1  md:mb-1 mt-7'>
+
+                    <div className='md:mt-1 md:mb-1 mt-7'>
                         <h1 className='font-bold'>Currently Working On</h1>
-                        <div id='for-image-icon' className='flex  space-x-3 flex-wrap'>
+                        <div id='for-image-icon' className='flex space-x-3 flex-wrap'>
                             {techIcons.map((src, index) => (
-                                <motion.img
+                                <motion.div
                                     key={index}
                                     custom={index}
                                     variants={iconVariants}
                                     initial="hidden"
                                     animate={inViewIcons ? "visible" : "hidden"}
-                                    src={src}
-                                    alt={`tech-${index}`}
-                                    className='w-8 h-8  hover:scale-110 duration-200 cursor-pointer'
-                                />
+                                >
+                                    <OptimizedImg
+                                        src={src}
+                                        alt={`tech-${index}`}
+                                        width={32}
+                                        height={32}
+                                        className='w-8 h-8 hover:scale-110 duration-200 cursor-pointer'
+                                    />
+                                </motion.div>
                             ))}
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* RIGHT SIDE IMAGE */}
+            {/* RIGHT SIDE — PROFILE IMAGE */}
             <div
                 ref={refImage}
                 id='img-div'
                 className='md:mt-25 md:ml-37c md:order-2 order-1 m-8 mt-28 flex'
             >
-                <motion.img
-                    id="hacker"
-                    className="md:w-[400px] md:ml-20  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
-                    src={mudassir}
-                    alt="profile"
+                <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
                     transition={{ duration: 1.5, type: "spring" }}
-                />
+                >
+                    {/* ✅ Fix 2: No JSX comment between props */}
+                    <OptimizedImg
+                        src={mudassir}
+                        alt="profile"
+                        isEager={true}
+                        width={400}
+                        height={400}
+                        className="md:w-[400px] md:ml-20 bg-fixed w-full object-cover w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                    />
+                </motion.div>
             </div>
-            <Chatbot/>
+
+            <Chatbot />
         </div>
     );
 };
