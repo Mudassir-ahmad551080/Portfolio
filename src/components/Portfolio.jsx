@@ -7,10 +7,9 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 // Import images
 import virtual from '../img/e-2.png';
 import ecommerce1 from '../img/e-1.png';
-import ecommerce3 from '../img/e-3.png';
 import myntra from '../img/myntra.png';
 import next from '../img/next.png';
-import resume from '../img/resume.png'
+
 
 /* --- 3D TILT CARD WRAPPER --- */
 const TiltCard = ({ children, className }) => {
@@ -63,7 +62,7 @@ const Portfolio = () => {
 
   const projects = [
     {
-      img: resume,
+      img: 'https://ik.imagekit.io/njsyfvk79/resume.PNG',
       title: "AI-Driven Resume Builder, Resume Analyzer & Interview Prep Platform",
       desc: "A full-stack intelligent career platform built with the MERN stack and Generative AI. Features include AI-powered resume generation with real-time feedback, ATS score analysis, tailored job description matching, and an AI interview coach with dynamic Q&A sessions — all designed to help users land their dream job faster.",
       tech: [
@@ -82,7 +81,7 @@ const Portfolio = () => {
       codeLink: "https://github.com/Mudassir-ahmad551080/Ai-Driven-Resume-Builder-Software",
     },
     {
-      img: ecommerce3,
+      img: 'https://ik.imagekit.io/njsyfvk79/ecommerce.PNG',
       title: "MERN E-Commerce Ecosystem",
       desc: "Production-grade platform with REST API, JWT auth, and complex MongoDB relationships. Handles real-time inventory and payments.",
       tech: ["MongoDB", "Express", "React", "Node", "Redux", "Tailwind Css"],

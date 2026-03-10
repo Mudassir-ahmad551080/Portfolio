@@ -3,8 +3,7 @@ import react from '../../public/react.png'
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
-import sun from '../img/sun.png'
-import moon from '../img/moon.png'
+import { Sun, Moon } from 'lucide-react';
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -12,19 +11,19 @@ function Navbar() {
     { id: 1, text: "Home" },
     { id: 2, text: "About" },
     { id: 3, text: "Projects" },
-    {id: 6, text: "Skills" },
+    { id: 6, text: "Skills" },
     { id: 5, text: "Contact" },
   ];
 
   const [theme, setTheme] = useTheme();
 
   function handleChange() {
-     setTheme(prev => (prev === 'ligth' ? 'dark' : 'ligth'));
+    setTheme(prev => (prev === 'ligth' ? 'dark' : 'ligth'));
   }
 
   return (
     <>
-      <div 
+      <div
         // REMOVED: id={theme} (This was overriding your transparency)
         // ADDED: Conditional text color based on theme
         className={`max-w-screen-2xl backdrop-blur-lg container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 
@@ -38,12 +37,16 @@ function Navbar() {
               <p className="text-sm">Soft<span className="text-red-500 text-sm">w</span>are Develo<span className="text-sm text-lime-400">p</span>er</p>
             </h1>
           </div>
-          
+
           {/* Desktop Toggle Button */}
           <div onClick={handleChange} className='md:ml-92 ml-10 mt-1 md:mt-0 cursor-pointer'>
-            {theme === 'ligth' ? (<img src={sun} height={10} width={40} alt="light mode"/>) : (<img src={moon} height={10} width={40} alt="dark mode"/>)}
+            {theme === 'ligth' ? (
+              <Sun size={28} className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200" />
+            ) : (
+              <Moon size={28} className="text-blue-400 hover:text-blue-300 transition-colors duration-200" />
+            )}
           </div>
-          
+
           <div>
             <ul className="hidden md:flex space-x-8">
               {navItems.map(({ id, text }) => (
@@ -71,7 +74,7 @@ function Navbar() {
 
         {/* Mobile navbar */}
         {menu && (
-          <div 
+          <div
             // REMOVED: id={theme}
             className={`shadow-md h-screen w-full md:hidden fixed top-16 left-0 
               ${theme === 'ligth' ? 'bg-white text-black' : 'bg-black text-white'}`}

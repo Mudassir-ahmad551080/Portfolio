@@ -11,7 +11,7 @@ import { ReactTyped } from "react-typed";
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useInView } from 'react-intersection-observer';
-import mudassir from '../../public/mudassir.png'
+
 import Chatbot from './Chatbot';
 
 const Home = () => {
@@ -144,9 +144,9 @@ const Home = () => {
                 className='md:mt-25 md:ml-37c md:order-2 order-1 m-8 mt-28 flex'
             >
                 <motion.img
-                    id="hacker"
+                    id={theme}
                     className="md:w-[400px] md:ml-20  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
-                    src={mudassir}
+                    src='https://ik.imagekit.io/njsyfvk79/mudassir-2.png'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
