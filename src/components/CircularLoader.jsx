@@ -5,7 +5,7 @@ const CircularLoader = ({ onComplete }) => {
   const [visible, setVisible] = useState(true);
   const animFrameRef = useRef(null);
   const startTimeRef = useRef(null);
-  const DURATION = 2200; // ms for 0→100
+  const DURATION = 800; // ms for 0→100 - shortened for testing
 
   useEffect(() => {
     const animate = (timestamp) => {
@@ -27,13 +27,13 @@ const CircularLoader = ({ onComplete }) => {
         setTimeout(() => {
           setVisible(false);
           if (onComplete) onComplete();
-        }, 450);
+        }, 200);
       }
     };
 
     animFrameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, []);
+  }, [onComplete]);
 
   if (!visible) return null;
 
