@@ -1,4 +1,4 @@
-import{j as e}from"./index-BdA6i76S.js";const r=()=>e.jsxs("div",{className:"fixed bottom-4 right-6 z-50",children:[e.jsx("a",{href:"/mudassir.pdf",download:"Mudassir_Ahmad_Resume.pdf",children:e.jsx("button",{className:"animate-bounce hover:animate-none glow-button",children:"📄 Download Resume"})}),e.jsx("style",{jsx:!0,children:`
+import{j as e}from"./index-Bv5JfRaU.js";const r=()=>e.jsxs("div",{className:"fixed bottom-4 right-6 z-50",children:[e.jsx("a",{href:"/mudassir.pdf",download:"Mudassir_Ahmad_Resume.pdf",children:e.jsx("button",{className:"animate-bounce hover:animate-none glow-button",children:"📄 Download Resume"})}),e.jsx("style",{jsx:!0,children:`
         .glow-button {
           padding: 12px 24px;
           background: linear-gradient(135deg, #1f2937, #111827);
