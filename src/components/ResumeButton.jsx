@@ -4,7 +4,7 @@ import React from 'react';
 const ResumeButton = () => {
   return (
     <div className="fixed bottom-4 right-6 z-50">
-      <a href="/mudassir.pdf" download="Mudassir_Ahmad_Resume.pdf">
+      <a href="./mudassir.pdf" download="Mudassir_Ahmad_Resume.pdf">
         <button
           className="animate-bounce hover:animate-none glow-button"
         >
