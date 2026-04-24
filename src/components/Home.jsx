@@ -146,7 +146,7 @@ const Home = () => {
                 <motion.img
                     id={theme}
                     className="md:w-[400px] md:ml-20  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
-                    src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2023%20Apr%202026,%2015_51_13.png'
+                    src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2009_30_44.png'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
