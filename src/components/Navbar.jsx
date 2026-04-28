@@ -12,6 +12,7 @@ function Navbar() {
     { id: 2, text: "About" },
     { id: 3, text: "Projects" },
     { id: 6, text: "Skills" },
+    {id:7,text:"Experience"},
     { id: 5, text: "Contact" },
   ];
 
@@ -39,7 +40,7 @@ function Navbar() {
           </div>
 
           {/* Desktop Toggle Button */}
-          <div onClick={handleChange} className='md:ml-92 ml-10 mt-1 md:mt-0 cursor-pointer'>
+          <div onClick={handleChange} className='md:ml-80 ml-10 mt-1 md:mt-0 cursor-pointer'>
             {theme === 'ligth' ? (
               <Sun size={28} className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200" />
             ) : (

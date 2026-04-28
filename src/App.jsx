@@ -18,6 +18,7 @@ import { motion, useScroll } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import { useGSAP } from '@gsap/react'
 import StarBackground from './components/StarsBackground.jsx'
+import Experience from './components/Experience.jsx';
 
 const LoadingFallback = () => (
   <div className="w-full h-20 flex items-center justify-center">
@@ -79,7 +80,9 @@ const App = () => {
               <About />
               <Portfolio />
               <Skills />
-              <hr className='mb-10 m-2 mx-8' />
+              <hr className='mb-10 m-2 mx-4'/>
+              <Experience/>
+              <hr className='mb-10 m-2 mx-4' />
               <Contact />
               <ContactInfo />
               <ResumeButton />
