@@ -12,7 +12,7 @@ function Navbar() {
     { id: 2, text: "About" },
     { id: 3, text: "Projects" },
     { id: 6, text: "Skills" },
-    {id:7,text:"Experience"},
+    { id: 7, text: "Experience" },
     { id: 5, text: "Contact" },
   ];
 
@@ -32,7 +32,12 @@ function Navbar() {
       >
         <div className="flex justify-between items-center h-16">
           <div className="flex space-x-2">
-            <img src={react} className="h-12 w-12 animate-spin duration-700 transition-all hover:animate-none cursor-pointer hover:shadow-[0_0_20px_10px_rgba(0,255,255,0.6)] object-cover mt-1 rounded-full" alt="" />
+            <img
+              src={react}
+              style={{ animationDuration: '2s' }}
+              className="h-12 w-12 animate-spin cursor-pointer hover:animate-none hover:shadow-[0_0_20px_10px_rgba(0,255,255,0.6)] object-cover mt-1 rounded-full"
+              alt=""
+            />
             <h1 className="font-semibold text-xl cursor-pointer">
               Mudassi<span className="text-green-500 text-2xl">r</span>
               <p className="text-sm">Soft<span className="text-red-500 text-sm">w</span>are Develo<span className="text-sm text-lime-400">p</span>er</p>
