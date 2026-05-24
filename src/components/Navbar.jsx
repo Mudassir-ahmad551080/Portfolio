@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
 import { Sun, Moon } from 'lucide-react';
+import DigitalTimer from './DigitalTimer';
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -44,13 +45,18 @@ function Navbar() {
             </h1>
           </div>
 
-          {/* Desktop Toggle Button */}
-          <div onClick={handleChange} className='md:ml-80 ml-10 mt-1 md:mt-0 cursor-pointer'>
-            {theme === 'ligth' ? (
-              <Sun size={28} className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200" />
-            ) : (
-              <Moon size={28} className="text-blue-400 hover:text-blue-300 transition-colors duration-200" />
-            )}
+          {/* Timer and Theme Toggle */}
+          <div className="flex items-center gap-3 md:gap-4 md:ml-auto ml-2 mr-4 mt-1 md:mt-0">
+            <div className="hidden md:flex">
+              <DigitalTimer />
+            </div>
+            <div onClick={handleChange} className='cursor-pointer hover:scale-110 transition-transform duration-200'>
+              {theme === 'ligth' ? (
+                <Sun size={24} className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200" />
+              ) : (
+                <Moon size={24} className="text-blue-400 hover:text-blue-300 transition-colors duration-200" />
+              )}
+            </div>
           </div>
 
           <div>
@@ -82,28 +88,33 @@ function Navbar() {
         {menu && (
           <div
             // REMOVED: id={theme}
-            className={`shadow-md h-screen w-full md:hidden fixed top-16 left-0 
+            className={`shadow-md h-screen w-full md:hidden fixed top-16 left-0
               ${theme === 'ligth' ? 'bg-white text-black' : 'bg-black text-white'}`}
           >
-            <ul className="flex flex-col items-center justify-center space-y-8 h-[80vh] text-2xl">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer"
-                  key={id}
-                >
-                  <Link
-                    onClick={() => setMenu(!menu)}
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
+            <div className="flex flex-col items-center justify-start pt-10 h-full">
+              <div className="mb-12">
+                <DigitalTimer />
+              </div>
+              <ul className="flex flex-col items-center justify-center space-y-8 h-[60vh] text-2xl">
+                {navItems.map(({ id, text }) => (
+                  <li
+                    className="hover:scale-105 duration-200 font-semibold cursor-pointer"
+                    key={id}
                   >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                    <Link
+                      onClick={() => setMenu(!menu)}
+                      to={text}
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      activeClass="active"
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
       </div>
