@@ -3,10 +3,7 @@ import pic from '../../public/react.png';
 import second from '../../public/node.png';
 import third from '../../public/express.png';
 import forth from '../../public/mongo.png.svg';
-import facebook from '../../public/icon/facebook.jpg';
 import linkdin from '../../public/icon/linkdin.jpg';
-import youtube from '../../public/icon/youtube.jpg';
-import instagram from '../../public/icon/instagram.jpg';
 import { ReactTyped } from "react-typed";
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
@@ -18,10 +15,8 @@ const Home = () => {
     const [theme] = useTheme();
     const techIcons = [forth, third, pic, second];
     const socialLinks = [
-        { href: "https://facebook.com/", src: facebook, alt: "Facebook" },
-        { href: "https://pk.linkedin.com/", src: linkdin, alt: "LinkedIn" },
-        { href: "https://www.youtube.com/", src: youtube, alt: "YouTube" },
-        { href: "https://www.instagram.com/", src: instagram, alt: "Instagram" },
+        { href: "https://github.com/Mudassir-ahmad551080", src: "https://cdn-icons-png.flaticon.com/512/25/25231.png", alt: "GitHub" },
+        { href: "https://www.linkedin.com/in/codebymudassir/", src: linkdin, alt: "LinkedIn" },
     ];
 
     const iconVariants = {
@@ -86,7 +81,7 @@ const Home = () => {
                     animate={inViewText ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 1, delay: 0.4 }}
                 >
-                    I transform complex business requirements into seamless, high-performance web applications. As a seasoned MERN stack developer, I specialize in architecting scalable systems—from intuitive React interfaces to robust Node.js backends. I don’t just write code; I build secure, production-ready solutions designed to scale with your user base. My approach combines technical precision with a focus on modern industry standards to ensure every deployment exceeds expectations.
+                    As a Full-Stack MERN Developer, I engineer scalable, AI-driven web applications that transform complex business needs into high-performance solutions. I architect robust systems—from intuitive React frontends to secure Node.js backends. By leveraging JavaScript-based Generative AI, Docker containerization, and Kubernetes orchestration, I deliver intelligent, production-ready ecosystems designed for dynamic scaling and automated deployment.
                 </motion.p>
 
                 {/* SOCIAL + TECH ICONS */}
@@ -110,7 +105,7 @@ const Home = () => {
                                         <img
                                             src={link.src}
                                             alt={link.alt}
-                                            className='w-10 h-10 rounded-full hover:scale-110 duration-200'
+                                            className={`w-10 h-10 rounded-full hover:scale-110 duration-200 object-cover ${link.alt === 'GitHub' ? 'p-1' : ''} ${theme === 'dark' && link.alt === 'GitHub' ? 'invert' : ''}`}
                                         />
                                     </a>
                                 </motion.li>
