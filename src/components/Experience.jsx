@@ -43,6 +43,41 @@ const Experience = () => {
               </ul>
             </div>
           </div>
+
+          {/* Experience Item */}
+          <div className='relative pl-8'>
+            {/* Timeline Dot */}
+            <div className='absolute -left-3 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white dark:border-slate-900 shadow-sm'></div>
+
+            <div className='bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 group'>
+              <div className='flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2'>
+                <h3 className='text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'>
+                  Full-stack Developer
+                </h3>
+                <span className='text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 px-3 py-1 rounded-full w-fit'>
+                  Sep 2025 – Dec 2025
+                </span>
+              </div>
+
+              <div className='text-gray-600 dark:text-gray-400 italic mb-4 flex items-center gap-2'>
+                <span className='font-semibold not-italic text-gray-700 dark:text-gray-300'>step2scientest</span>
+                <span>|</span>
+                <span>Abdara Road · On-site</span>
+              </div>
+
+              <ul className='list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300 leading-relaxed'>
+                <li>
+                  Developed engaging front-end applications for various projects at <span className='font-medium'>Step2Scientest</span>, enhancing user experience.
+                </li>
+                <li>
+                  Instructed BSCS and BSSE students in web development, fostering their skills and knowledge in the field.
+                </li>
+                <li>
+                  Collaborated with team members to implement best practices in coding and design, contributing to project success.
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
