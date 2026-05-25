@@ -85,7 +85,6 @@ const App = () => {
               <hr className='mb-10 m-2 mx-4' />
               <Contact />
               <ContactInfo />
-              <ResumeButton />
               <hr className='mb-10 m-2 mx-8' />
               <Footer />
             </Suspense>

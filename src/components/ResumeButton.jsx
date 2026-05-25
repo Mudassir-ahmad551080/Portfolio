@@ -3,35 +3,49 @@ import React from 'react';
 
 const ResumeButton = () => {
   return (
-    <div className="fixed bottom-4 right-6 z-50">
+    <div className="inline-block z-50">
       <a href="./mudassir.pdf" download="Mudassir_Ahmad_Resume.pdf">
         <button
-          className="animate-bounce hover:animate-none glow-button"
+          className="glow-button"
         >
-          📄 Download Resume
+          Download Resume
         </button>
       </a>
 
       <style jsx>{`
         .glow-button {
-          padding: 12px 24px;
-          background: linear-gradient(135deg, #1f2937, #111827);
+          padding: 12px 28px;
+          background: linear-gradient(135deg, #0ea5e9, #2563eb);
           color: white;
           border: none;
-          border-radius: 8px;
+          border-radius: 50px;
           cursor: pointer;
           font-weight: 600;
-          box-shadow: 0 0 10px rgba(59, 130, 246, 0.4),
-                      0 0 20px rgba(59, 130, 246, 0.3);
+          font-size: 16px;
+          position: relative;
+          overflow: hidden;
           transition: all 0.3s ease-in-out;
+          box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+          animation: pulse-glow 2s infinite;
         }
 
         .glow-button:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 15px rgba(59, 130, 246, 0.8),
-                      0 0 30px rgba(59, 130, 246, 0.6),
-                      0 0 45px rgba(59, 130, 246, 0.4);
-          background: linear-gradient(135deg, #2563eb, #1e40af);
+          transform: translateY(-2px) scale(1.05);
+          box-shadow: 0 0 25px rgba(37, 99, 235, 0.8),
+                      0 0 10px rgba(14, 165, 233, 0.6);
+          background: linear-gradient(135deg, #38bdf8, #3b82f6);
+        }
+
+        @keyframes pulse-glow {
+          0% {
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.8);
+          }
+          100% {
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+          }
         }
       `}</style>
     </div>

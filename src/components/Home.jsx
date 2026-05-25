@@ -10,6 +10,7 @@ import { useTheme } from '../context/ThemeContext';
 import { useInView } from 'react-intersection-observer';
 
 import Chatbot from './Chatbot';
+import ResumeButton from './ResumeButton';
 
 const Home = () => {
     const [theme] = useTheme();
@@ -84,6 +85,15 @@ const Home = () => {
                 >
                     As a Full-Stack MERN Developer, I engineer scalable, AI-driven web applications that transform complex business needs into high-performance solutions. I architect robust systems—from intuitive React frontends to secure Node.js backends. By leveraging JavaScript-based Generative AI, Docker containerization, and Kubernetes orchestration, I deliver intelligent, production-ready ecosystems designed for dynamic scaling and automated deployment.
                 </motion.p>
+
+                <motion.div
+                    className='mt-8'
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 1, delay: 0.6 }}
+                >
+                    <ResumeButton />
+                </motion.div>
 
                 {/* SOCIAL + TECH ICONS */}
                 <div
