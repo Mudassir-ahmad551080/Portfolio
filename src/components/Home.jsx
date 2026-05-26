@@ -50,7 +50,7 @@ const Home = () => {
             {/* LEFT SIDE TEXT */}
             <div
                 ref={refText}
-                className='h-auto mt-12 md:mt-36 md:order-1 order-2 max-w-150 m-2 md:ml-20 space-y-1'
+                className='h-auto mt-12 md:mt-36 md:order-1 order-2 max-w-3xl m-2 md:ml-20 space-y-1'
             >
                 <motion.h2
                     className='text-xl font-semibold'
@@ -147,11 +147,11 @@ const Home = () => {
             <div
                 ref={refImage}
                 id='img-div'
-                className='md:mt-25 md:ml-37c md:order-2 order-1 m-8 mt-28 flex'
+                className='md:mt-24 md:ml-20 md:order-2 order-1 m-8 mt-28 flex justify-center'
             >
                 <motion.img
                     id={theme}
-                    className="md:w-[400px] md:ml-20  bg-fixed w-full object-cover  w-[300px] h-[300px] rounded-full mb-0 md:h-[400px]"
+                    className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full mb-0"
                     src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2014_43_41.png'
                     alt="profile"
                     initial={{ scale: 0.8, opacity: 0 }}

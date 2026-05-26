@@ -46,8 +46,8 @@ function Navbar() {
           </div>
 
           {/* Timer and Theme Toggle */}
-          <div className="flex items-center gap-3 md:gap-4 md:ml-auto ml-2 mr-4 mt-1 md:mt-0">
-            <div className="hidden md:flex">
+          <div className="flex items-center gap-3 md:gap-6 md:ml-auto ml-2 mr-4 mt-1 md:mt-0">
+            <div className="hidden sm:flex">
               <DigitalTimer />
             </div>
             <div onClick={handleChange} className='cursor-pointer hover:scale-110 transition-transform duration-200'>
