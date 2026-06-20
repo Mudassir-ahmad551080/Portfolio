@@ -64,14 +64,14 @@ const App = () => {
             <div className='stair h-full w-1/2 bg-zinc-950'></div>
           </div>
 
-          <div id={theme} style={{ backgroundColor: 'transparent' }} className="relative">
+          <div id={theme} style={{ backgroundColor: 'transparent' }} className="relative max-w-full overflow-hidden">
             <motion.div
               style={{ scaleX: scrollYprogress }}
               className='bg-lime-400 h-[2px] mb-20 origin-left fixed w-full z-120'
             />
 
             <Navbar />
-            <div className='mt-15 absolute w-full h-[5px] mt-11 fixed mt-1 z-1 hidden md:flex bg-amber-100'></div>
+            <div className='absolute w-full h-[5px] top-11 fixed z-1 hidden md:flex bg-amber-100'></div>
             <Home />
 
             <Suspense fallback={<LoadingFallback />}>

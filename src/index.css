@@ -1,6 +1,10 @@
 
 @import "tailwindcss";
 
+html, body {
+    overflow-x: hidden;
+}
+
 body{
      background-image: url('../../../Gemini_Generated_Image_hazatdhazatdhaza.png');
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -146,5 +150,19 @@ body{
     100% {
         box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
     }
+}
+
+/* Gradient ring animation for profile image */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
 }
 

@@ -147,17 +147,27 @@ const Home = () => {
             <div
                 ref={refImage}
                 id='img-div'
-                className='md:mt-24 md:ml-20 md:order-2 order-1 m-8 mt-28 flex justify-center'
+                className='md:mt-24 md:ml-20 md:order-2 order-1 m-4 mt-20 flex justify-center items-center'
             >
-                <motion.img
-                    id={theme}
-                    className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover rounded-full mb-0"
-                    src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2014_43_41.png'
-                    alt="profile"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
-                    transition={{ duration: 1.5, type: "spring" }}
-                />
+                {/* Clean Ring Container */}
+                <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem]">
+                    {/* White Border Ring */}
+                    <div className="absolute inset-0 rounded-full border-4 border-white/50"></div>
+                    {/* Image Container */}
+                    <div className="absolute inset-1 rounded-full overflow-hidden bg-black">
+                        <motion.img
+                            id={theme}
+                            className="w-full h-full object-cover"
+                            src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2014_43_41.png'
+                            alt="profile"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
+                            transition={{ duration: 1.5, type: "spring" }}
+                        />
+                    </div>
+                    {/* Subtle Glow */}
+                    <div className="absolute -inset-2 rounded-full bg-white opacity-10 blur-xl"></div>
+                </div>
             </div>
             <Chatbot/>
         </div>
