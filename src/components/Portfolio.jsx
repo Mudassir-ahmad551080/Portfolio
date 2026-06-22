@@ -81,6 +81,23 @@ const Portfolio = () => {
       codeLink: "https://github.com/Mudassir-ahmad551080/Ai-Driven-Resume-Builder-Software",
     },
     {
+      img: 'https://ik.imagekit.io/njsyfvk79/codereview.PNG',
+      title: "AI-Powered Code-Review Tool",
+      desc: "A full-stack Ai Powered code-review platform built with the MERN stack and Generative AI. Features include AI-powered code analysis with real-time feedback, code quality score analysis, tailored code improvement suggestions, and an AI code optimization coach with dynamic Q&A sessions — all designed to help developers write better code faster.",
+      tech: [
+        "Generative AI",
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "Groq SDK",
+        "Tailwind CSS",
+        "REST API",
+      ],
+      projectLink: "https://code-review-one-liard.vercel.app/",
+      codeLink: "https://github.com/Mudassir-ahmad551080/Ai-Powered-CodeReview-Tool",
+    },
+    {
       img: 'https://ik.imagekit.io/njsyfvk79/ecommerce.PNG',
       title: "MERN E-Commerce Ecosystem",
       desc: "Production-grade platform with REST API, JWT auth, and complex MongoDB relationships. Handles real-time inventory and payments.",
@@ -95,14 +112,6 @@ const Portfolio = () => {
       tech: ["Next.js", "Tailwind", "SSR", "Vercel"],
       projectLink: "https://next-app-six-iota.vercel.app/",
       codeLink: "https://github.com/Mudassir-ahmad551080/Next-app"
-    },
-    {
-      img: myntra,
-      title: "Myntra Clone",
-      desc: "Pixel-perfect clone featuring complex DOM manipulation, local storage persistence, and dynamic cart calculation logic.",
-      tech: ["JavaScript", "HTML5", "CSS3", "DOM"],
-      projectLink: "https://myntra-clone-flame-eight.vercel.app/index.html",
-      codeLink: "https://github.com/Mudassir-ahmad551080/myntra-clone"
     },
     {
       img: ecommerce1,
