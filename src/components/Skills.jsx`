@@ -1,0 +1,229 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaDocker,
+} from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
+  SiPostman,
+  SiMongodb
+} from 'react-icons/si';
+import { useTheme } from '../context/ThemeContext';
+
+const skillsData = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "Next.js", icon: <SiNextdotjs className="text-gray-500" /> },
+      { name: "React.js", icon: <FaReact className="text-blue-500" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+      { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
+      { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
+      { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" /> },
+    ]
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
+      { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+    ]
+  },
+  {
+    category: "Tools & DevOps",
+    skills: [
+      { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
+      { name: "GitHub", icon: <FaGithub className="text-gray-500" /> },
+      { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+      { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+    ]
+  }
+];
+
+const Skills = () => {
+  const [theme] = useTheme();
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    height: typeof window !== 'undefined' ? window.innerHeight : 800
+  });
+  const [hoveredSkill, setHoveredSkill] = useState(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Position Calculations
+  const { hubs, nodes } = useMemo(() => {
+    const hubs = [];
+    const nodes = [];
+    const isMobile = windowSize.width < 768;
+
+    const centerX = windowSize.width / 2;
+
+    // Fixed heights for hubs on mobile to prevent overlap and overflow
+    const hubYPositions = isMobile ? [200, 500, 800] : [windowSize.height / 3];
+
+    skillsData.forEach((category, index) => {
+      const hX = isMobile ? centerX : centerX + (index - 1) * 400;
+      const hY = isMobile ? hubYPositions[index] : hubYPositions[0];
+
+      hubs.push({ id: index, x: hX, y: hY, category: category.category });
+
+      // Skill Positions around hub
+      const radius = isMobile ? 100 : 180;
+      category.skills.forEach((skill, sIndex) => {
+        const angle = (sIndex / category.skills.length) * 2 * Math.PI;
+        nodes.push({
+          id: `${index}-${sIndex}`,
+          hubId: index,
+          x: hX + radius * Math.cos(angle),
+          y: hY + radius * Math.sin(angle),
+          name: skill.name,
+          icon: skill.icon,
+        });
+      });
+    });
+
+    return { hubs, nodes };
+  }, [windowSize]);
+
+  return (
+    <section id='Skills' className="py-20 relative overflow-hidden min-h-screen md:min-h-[1000px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 id={theme} className="text-3xl md:text-4xl font-bold mb-4">
+            Technical Skills
+          </h2>
+          <p className="text-lg max-w-2xl mx-auto">
+            A full stack toolset for building scalable, responsive, and performant web applications.
+          </p>
+        </motion.div>
+
+        {/* Graph Container */}
+        {/* Dynamic height for mobile to fit all 3 hubs comfortably */}
+        <div className="relative w-full h-[1100px] md:h-[800px] cursor-default">
+          {/* SVG Layer for connections */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ overflow: 'visible' }}>
+            {nodes.map(node => {
+              const hub = hubs.find(h => h.id === node.hubId);
+              if (!hub) return null;
+              const isHighlighted = hoveredSkill === node.id;
+              return (
+                <motion.line
+                  key={node.id}
+                  x1={hub.x}
+                  y1={hub.y}
+                  x2={node.x}
+                  y2={node.y}
+                  stroke={theme === 'dark' ? (isHighlighted ? '#a3e635' : 'rgba(163,230,53,0.2)') : (isHighlighted ? '#4d7c0f' : 'rgba(77,124,15,0.2)')}
+                  strokeWidth={isHighlighted ? 3 : 1.5}
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: true }}
+                />
+              );
+            })}
+          </svg>
+
+          {/* Hubs */}
+          {hubs.map(hub => (
+            <motion.div
+              key={hub.id}
+              className="absolute flex items-center justify-center text-center"
+              style={{
+                left: hub.x,
+                top: hub.y,
+                transform: 'translate(-50%, -50%)',
+                width: '100px',
+                height: '100px'
+              }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+              viewport={{ once: true }}
+            >
+              <div id={theme} className={`w-full h-full rounded-full flex items-center justify-center text-center p-3 font-bold text-xs md:text-base shadow-2xl border-2 transition-all duration-300 ${
+                theme === 'dark'
+                ? 'bg-zinc-900 border-lime-400 text-lime-400 shadow-lime-400/20'
+                : 'bg-white border-lime-600 text-lime-600 shadow-lime-600/10'
+              }`}>
+                {hub.category}
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Skill Nodes */}
+          {nodes.map(node => (
+            <motion.div
+              key={node.id}
+              onMouseEnter={() => setHoveredSkill(node.id)}
+              onMouseLeave={() => setHoveredSkill(null)}
+              className="absolute group flex items-center justify-center"
+              style={{
+                left: node.x,
+                top: node.y,
+                transform: 'translate(-50%, -50%)',
+                width: '50px',
+                height: '50px'
+              }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              animate={{
+                y: [0, -8, 0],
+              }}
+              transition={{
+                scale: { type: 'spring', stiffness: 260, damping: 20 },
+                y: {
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+              viewport={{ once: true }}
+            >
+              <div id={theme} className={`w-full h-full rounded-full flex items-center justify-center text-xl transition-all duration-300 cursor-pointer shadow-lg border-2 ${
+                theme === 'dark'
+                ? 'bg-zinc-800 border-zinc-700 text-white hover:border-lime-400 hover:shadow-lime-400/30'
+                : 'bg-gray-100 border-gray-300 text-gray-800 hover:border-lime-600 hover:shadow-lime-600/30'
+              }`}>
+                {node.icon}
+              </div>
+
+              {/* Tooltip */}
+              <div className={`absolute top-full mt-2 px-2 py-1 rounded text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none ${
+                theme === 'dark' ? 'bg-zinc-700 text-white' : 'bg-gray-200 text-gray-800'
+              }`}>
+                {node.name}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
