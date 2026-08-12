@@ -11,6 +11,7 @@ import { useInView } from 'react-intersection-observer';
 
 import Chatbot from './Chatbot';
 import ResumeButton from './ResumeButton';
+import './Home.css';
 
 const Home = () => {
     const [theme] = useTheme();
@@ -26,7 +27,6 @@ const Home = () => {
             opacity: 1,
             y: 0,
             transition: {
-                
                 delay: i * 0.2,
                 duration: 0.6,
                 type: "spring"
@@ -43,133 +43,178 @@ const Home = () => {
         <div
             name='Home'
             id={theme}
-            // FIX: Force transparent background so stars show through
+            // Keep background transparent so the star field shows through
             style={{ backgroundColor: 'transparent' }}
-            className='p-3 w-full flex md:flex-row flex-col'
+            className='home-section p-3 w-full'
         >
-            {/* LEFT SIDE TEXT */}
-            <div
-                ref={refText}
-                className='h-auto mt-12 md:mt-36 md:order-1 order-2 max-w-3xl m-2 md:ml-20 space-y-1'
-            >
-                <motion.h2
-                    className='text-xl font-semibold'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inViewText ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1 }}
-                >
-                    Welcome In My Feed
-                </motion.h2>
+            <div className='home-inner'>
 
-                <motion.h1
-                    className='text-2xl font-bold space-x-1'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inViewText ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1, delay: 0.2 }}
-                >
-                    Hello, I&apos;m
-                    <ReactTyped
-                        className='ml-2 text-cyan-400'
-                        strings={["Programmer", "Developer", "Coder", "Full Stack developer", "MERN stack Developer"]}
-                        typeSpeed={40}
-                        backSpeed={50}
-                        loop
-                    />
-                </motion.h1>
-
-                <motion.p
-                    className='mt-5 text-justify'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inViewText ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1, delay: 0.4 }}
-                >
-                    As a Full-Stack MERN Developer, I engineer scalable, AI-driven web applications that transform complex business needs into high-performance solutions. I architect robust systems—from intuitive React frontends to secure Node.js backends. By leveraging JavaScript-based Generative AI, Docker containerization, and Kubernetes orchestration, I deliver intelligent, production-ready ecosystems designed for dynamic scaling and automated deployment.
-                </motion.p>
-
-                <motion.div
-                    className='mt-8'
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={inViewText ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 1, delay: 0.6 }}
-                >
-                    <ResumeButton />
-                </motion.div>
-
-                {/* SOCIAL + TECH ICONS */}
+                {/* LEFT SIDE TEXT */}
                 <div
-                    ref={refIcons}
-                    className='flex  text-center  justify-between mt-10 items-center flex-col md:flex-row'
+                    ref={refText}
+                    className='home-text-col h-auto m-2 space-y-1'
                 >
-                    <div className='space-y-1 text-center'>
-                        <h1 className='text-xl font-bold'>Available On</h1>
-                        <div id='icon' className='flex space-x-2 flex-wrap'>
-                            {socialLinks.map((link, index) => (
-                                <motion.li
-                                    key={index}
-                                    custom={index}
-                                    variants={iconVariants}
-                                    initial="hidden"
-                                    animate={inViewIcons ? "visible" : "hidden"}
-                                    className='list-none'
-                                >
-                                    <a href={link.href} target='_blank' rel="noopener noreferrer">
-                                        <img
-                                            src={link.src}
-                                            alt={link.alt}
-                                            className={`w-10 h-10 rounded-full hover:scale-110 duration-200 object-cover ${link.alt === 'GitHub' ? 'p-1' : ''} ${theme === 'dark' && link.alt === 'GitHub' ? 'invert' : ''}`}
-                                        />
-                                    </a>
-                                </motion.li>
-                            ))}
+                    {/* Status pill */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6 }}
+                        className='mb-4'
+                    >
+                        <span className='status-pill'>
+                            <span className='dot' />
+                            Available for new opportunities
+                        </span>
+                    </motion.div>
+
+                    <motion.h2
+                        className='home-greeting'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1 }}
+                    >
+                        Welcome to my portfolio
+                    </motion.h2>
+
+                    <motion.h1
+                        className='home-title'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, delay: 0.2 }}
+                    >
+                        <span className='name-static'>Hello, I&apos;m Mudassir — a</span>
+                        <ReactTyped
+                            className='gradient-text'
+                            strings={["Programmer", "Developer", "Coder", "Full Stack Developer", "MERN Stack Developer"]}
+                            typeSpeed={40}
+                            backSpeed={50}
+                            loop
+                            cursorClassName='home-typed-cursor'
+                        />
+                    </motion.h1>
+
+                    <motion.p
+                        className='home-description'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, delay: 0.4 }}
+                    >
+                        As a Full-Stack MERN Developer, I engineer scalable, AI-driven web
+                        applications that transform complex business needs into high-performance
+                        solutions. I architect robust systems — from intuitive React frontends to
+                        secure Node.js backends. By leveraging JavaScript-based Generative AI,
+                        Docker containerization, and Kubernetes orchestration, I deliver
+                        intelligent, production-ready ecosystems designed for dynamic scaling
+                        and automated deployment.
+                    </motion.p>
+
+                    <motion.div
+                        className='home-cta-row'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={inViewText ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 1, delay: 0.6 }}
+                    >
+                        <ResumeButton />
+                        <a href='#Contact' className='home-secondary-btn'>
+                            Get in touch
+                            <span aria-hidden>→</span>
+                        </a>
+                    </motion.div>
+
+                    {/* SOCIAL + TECH ICONS */}
+                    <div
+                        ref={refIcons}
+                        className='home-social-block'
+                    >
+                        <div className='home-social-group'>
+                            <p className='label'>Available on</p>
+                            <ul id='icon' className='home-icon-list'>
+                                {socialLinks.map((link, index) => (
+                                    <motion.li
+                                        key={index}
+                                        custom={index}
+                                        variants={iconVariants}
+                                        initial="hidden"
+                                        animate={inViewIcons ? "visible" : "hidden"}
+                                    >
+                                        <a
+                                            href={link.href}
+                                            target='_blank'
+                                            rel="noopener noreferrer"
+                                            aria-label={link.alt}
+                                            className='home-icon-link'
+                                        >
+                                            <img
+                                                src={link.src}
+                                                alt={link.alt}
+                                                className={`${theme === 'dark' && link.alt === 'GitHub' ? 'invert' : ''}`}
+                                            />
+                                        </a>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className='home-social-group'>
+                            <p className='label'>Currently working with</p>
+                            <div id='for-image-icon' className='home-icon-list'>
+                                {techIcons.map((src, index) => (
+                                    <motion.img
+                                        key={index}
+                                        custom={index}
+                                        variants={iconVariants}
+                                        initial="hidden"
+                                        animate={inViewIcons ? "visible" : "hidden"}
+                                        src={src}
+                                        alt={`tech-${index}`}
+                                        className='home-tech-icon'
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
-                    <div className='md:mt-1  md:mb-1 mt-7'>
-                        <h1 className='font-bold'>Currently Working On</h1>
-                        <div id='for-image-icon' className='flex  space-x-3 flex-wrap'>
-                            {techIcons.map((src, index) => (
-                                <motion.img
-                                    key={index}
-                                    custom={index}
-                                    variants={iconVariants}
-                                    initial="hidden"
-                                    animate={inViewIcons ? "visible" : "hidden"}
-                                    src={src}
-                                    alt={`tech-${index}`}
-                                    className='w-8 h-8  hover:scale-110 duration-200 cursor-pointer'
-                                />
-                            ))}
-                        </div>
+                </div>
+
+                {/* RIGHT SIDE IMAGE */}
+                <div
+                    ref={refImage}
+                    id='img-div'
+                    className='home-image-col'
+                >
+                    <div className="avatar-wrap">
+                        {/* Ambient glow */}
+                        <div className="avatar-glow" />
+                        {/* Animated gradient ring */}
+                        <div className="avatar-ring" />
+                        {/* Image */}
+                        <motion.div
+                            id={theme}
+                            className="avatar-inner"
+                            initial={{ scale: 0.85, opacity: 0 }}
+                            animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
+                            transition={{ duration: 1.4, type: "spring" }}
+                        >
+                            <img
+                                src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2014_43_41.png'
+                                alt="Mudassir — Full Stack MERN Developer"
+                            />
+                        </motion.div>
+
+                        {/* Floating accent badges */}
+                        <span className="avatar-badge b1">
+                            <span className="emoji">⚡</span> MERN Stack
+                        </span>
+                        <span className="avatar-badge b2">
+                            <span className="emoji">🤖</span> AI-Driven
+                        </span>
+                        <span className="avatar-badge b3">
+                            <span className="emoji">🚀</span> DevOps
+                        </span>
                     </div>
                 </div>
             </div>
 
-            {/* RIGHT SIDE IMAGE */}
-            <div
-                ref={refImage}
-                id='img-div'
-                className='md:mt-24 md:ml-20 md:order-2 order-1 m-4 mt-20 flex justify-center items-center'
-            >
-                {/* Clean Ring Container */}
-                <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem]">
-                    {/* White Border Ring */}
-                    <div className="absolute inset-0 rounded-full border-4 border-white/50"></div>
-                    {/* Image Container */}
-                    <div className="absolute inset-1 rounded-full overflow-hidden bg-black">
-                        <motion.img
-                            id={theme}
-                            className="w-full h-full object-cover"
-                            src='https://ik.imagekit.io/njsyfvk79/ChatGPT%20Image%2024%20Apr%202026,%2014_43_41.png'
-                            alt="profile"
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={inViewImage ? { scale: 1, opacity: 1 } : {}}
-                            transition={{ duration: 1.5, type: "spring" }}
-                        />
-                    </div>
-                    {/* Subtle Glow */}
-                    <div className="absolute -inset-2 rounded-full bg-white opacity-10 blur-xl"></div>
-                </div>
-            </div>
-            <Chatbot/>
+            <Chatbot />
         </div>
     );
 };
