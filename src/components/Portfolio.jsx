@@ -86,6 +86,14 @@ const Portfolio = () => {
       codeLink: 'https://github.com/Mudassir-ahmad551080/Ai-Powered-CodeReview-Tool',
     },
     {
+      img: 'https://ik.imagekit.io/njsyfvk79/blog.PNG',
+      title: 'Full-Stack Blog Application',
+      desc: 'A full-stack blog platform built with the MERN stack featuring user authentication, blog creation, commenting, and publishing workflows. Users can sign up, create and publish their own blog posts, and engage with the community through comments — designed to deliver a smooth and responsive writing experience.',
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT Auth', 'Tailwind CSS', 'REST API', 'Vibe Coding'],
+      projectLink: 'https://app-dq2ir91oeuwx.appmedo.com/',
+      codeLink: 'https://github.com/Mudassir-ahmad551080',
+    },
+    {
       img: 'https://ik.imagekit.io/njsyfvk79/ecommerce.PNG',
       title: 'MERN E-Commerce Ecosystem',
       desc: 'Production-grade platform with REST API, JWT auth, and complex MongoDB relationships. Handles real-time inventory and payments.',
