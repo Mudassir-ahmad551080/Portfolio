@@ -25,7 +25,7 @@ const Chatbot = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('https://chat-backend-orcin-one.vercel.app/api/info', { text: input });
+            const response = await axios.post('https://chat-backend-8zpc.vercel.app/api/info', { text: input });
             const aiMsg = { role: 'ai', content: response.data.data };
             setMessages(prev => [...prev, aiMsg]);
         } catch (error) {
