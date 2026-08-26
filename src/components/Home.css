@@ -4,6 +4,14 @@
 
 .home-section {
   background-color: transparent;
+  scroll-margin-top: 80px;
+  padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .home-section {
+    padding-top: 0;
+  }
 }
 
 /* ---------- Layout ---------- */
@@ -17,10 +25,10 @@
 @media (min-width: 768px) {
   .home-inner {
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: center;
     gap: 4rem;
-    padding: 5rem 0;
+    padding: 6rem 0 5rem;
   }
 }
 
@@ -41,12 +49,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 4rem;
+  scroll-margin-top: 80px;
 }
 
 @media (min-width: 768px) {
   .home-image-col {
     order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin-right: 3rem;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 
@@ -262,6 +278,15 @@
   object-fit: contain;
   border-radius: 4px;
 }
+
+.home-social-svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  color: currentColor;
+}
+
+#dark .home-social-svg { color: #ffffff; }
+#light .home-social-svg { color: #0f172a; }
 
 .home-tech-icon {
   width: 2.2rem;

@@ -16,7 +16,11 @@ import {
   SiTailwindcss,
   SiExpress,
   SiPostman,
-  SiMongodb
+  SiMongodb,
+  SiRedis,
+  SiPostgresql,
+  SiKubernetes,
+  SiLangchain
 } from 'react-icons/si';
 import { useTheme } from '../context/ThemeContext';
 
@@ -39,6 +43,8 @@ const skillsData = [
       { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
       { name: "Express.js", icon: <SiExpress className="text-gray-500" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-sky-700" /> },
+      { name: "Redis", icon: <SiRedis className="text-red-500" /> },
     ]
   },
   {
@@ -47,7 +53,9 @@ const skillsData = [
       { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
       { name: "GitHub", icon: <FaGithub className="text-gray-500" /> },
       { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+      { name: "Kubernetes", icon: <SiKubernetes className="text-sky-500" /> },
       { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+      { name: "LangChain", icon: <SiLangchain className="text-green-400" /> },
     ]
   }
 ];
