@@ -166,3 +166,27 @@ body{
     animation: spin-slow 4s linear infinite;
 }
 
+/* Hide the system cursor only while SnakeCursor is mounted. */
+body.cursor-snake,
+body.cursor-snake * {
+    cursor: none !important;
+}
+
+/* On touch-only devices, keep the default cursor. */
+@media (hover: none) {
+    body.cursor-snake,
+    body.cursor-snake * {
+        cursor: auto !important;
+    }
+}
+
+/* Professional ring cursor: when hovering over an interactive element,
+   expand the ring and fill it for a clear "click target" affordance. */
+body.cursor-hover .cursor-ring {
+    width: 56px;
+    height: 56px;
+    background-color: currentColor;
+    border-color: currentColor;
+    opacity: 0.12;
+}
+
