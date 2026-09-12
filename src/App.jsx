@@ -19,7 +19,7 @@ import { Toaster } from 'react-hot-toast'
 import { useGSAP } from '@gsap/react'
 import StarBackground from './components/StarsBackground.jsx'
 import Experience from './components/Experience.jsx';
-import SnakeCursor from './components/SnakeCursor.jsx';
+
 
 const LoadingFallback = () => (
   <div className="w-full h-20 flex items-center justify-center">
@@ -54,7 +54,6 @@ const App = () => {
       {loaderDone && (
         <>
           <StarBackground theme={theme} />
-          <SnakeCursor />
 
           {/* GSAP stair overlay */}
           <div ref={divref} className='h-screen w-full leading-tight flex fixed z-50 top-0 pointer-events-none'>

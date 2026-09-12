@@ -166,6 +166,15 @@ body{
     animation: spin-slow 4s linear infinite;
 }
 
+/* Orbit animation for skills icons */
+.animate-orbit {
+    animation: spin-slow 25s linear infinite;
+}
+
+.animate-orbit-reverse {
+    animation: spin-slow 25s linear infinite reverse;
+}
+
 /* Hide the system cursor only while SnakeCursor is mounted. */
 body.cursor-snake,
 body.cursor-snake * {

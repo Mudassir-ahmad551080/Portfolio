@@ -68,6 +68,8 @@ const SkillCluster = ({ category, theme, hoveredSkill, setHoveredSkill }) => {
 
   return (
     <div className="relative w-full max-w-[320px] aspect-square mx-auto">
+      {/* Rotating orbit layer — holds the SVG lines + icons and spins as one circle */}
+      <div className="absolute inset-0 group/orbit animate-orbit hover:[animation-play-state:paused]">
       {/* SVG Connections Layer */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -103,27 +105,6 @@ const SkillCluster = ({ category, theme, hoveredSkill, setHoveredSkill }) => {
         })}
       </svg>
 
-      {/* Center Hub */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 w-20 h-20 md:w-24 md:h-24 z-10"
-        style={{ x: '-50%', y: '-50%' }} // Safely center with framer-motion
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-        viewport={{ once: true }}
-      >
-        <div 
-          id={theme} 
-          className={`w-full h-full rounded-full flex items-center justify-center text-center p-2 font-bold text-xs md:text-sm shadow-2xl border-2 transition-all duration-300 ${
-            theme === 'dark'
-              ? 'bg-zinc-900 border-lime-400 text-lime-400 shadow-lime-400/20'
-              : 'bg-white border-lime-600 text-lime-600 shadow-lime-600/10'
-          }`}
-        >
-          {category.category}
-        </div>
-      </motion.div>
-
       {/* Skill Nodes */}
       {category.skills.map((skill, i) => {
         const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
@@ -143,6 +124,9 @@ const SkillCluster = ({ category, theme, hoveredSkill, setHoveredSkill }) => {
               height: '48px',
             }}
           >
+            {/* Counter-rotation wrapper keeps the icon + tooltip upright while orbiting.
+                Pauses together with the orbit so icons never spin out of sync */}
+            <div className="w-full h-full animate-orbit-reverse group-hover/orbit:[animation-play-state:paused]">
             {/* Inner motion div handles animation without breaking absolute positioning */}
             <motion.div
               onMouseEnter={() => setHoveredSkill(nodeId)}
@@ -177,9 +161,32 @@ const SkillCluster = ({ category, theme, hoveredSkill, setHoveredSkill }) => {
             >
               {skill.name}
             </div>
+            </div>
           </div>
         );
       })}
+      </div>
+
+      {/* Center Hub — stays outside the rotating layer so its text stays upright */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 w-20 h-20 md:w-24 md:h-24 z-10"
+        style={{ x: '-50%', y: '-50%' }} // Safely center with framer-motion
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+        viewport={{ once: true }}
+      >
+        <div
+          id={theme}
+          className={`w-full h-full rounded-full flex items-center justify-center text-center p-2 font-bold text-xs md:text-sm shadow-2xl border-2 transition-all duration-300 ${
+            theme === 'dark'
+              ? 'bg-zinc-900 border-lime-400 text-lime-400 shadow-lime-400/20'
+              : 'bg-white border-lime-600 text-lime-600 shadow-lime-600/10'
+          }`}
+        >
+          {category.category}
+        </div>
+      </motion.div>
     </div>
   );
 };
