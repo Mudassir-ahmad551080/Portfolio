@@ -130,7 +130,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(120deg, #22d3ee 0%, #6366f1 45%, #ec4899 100%);
+  background: linear-gradient(120deg, var(--accent-primary) 0%, var(--accent-secondary) 45%, var(--accent-primary-hover) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
           background-clip: text;

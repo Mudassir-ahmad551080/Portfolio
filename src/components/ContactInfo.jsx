@@ -1,60 +1,84 @@
-import React from 'react';
-import { FaPhone, FaWhatsapp } from "react-icons/fa6"; // Updated import for consistency
+import { FaPhone, FaWhatsapp } from "react-icons/fa6";
 import { MdOutlineMail } from "react-icons/md";
 import { useTheme } from '../context/ThemeContext';
+
 const ContactInfo = () => {
-  
-  // 1. Data Structure: Easy to maintain and scalable
   const [theme] = useTheme();
+
   const contactData = [
     {
       id: 1,
       icon: <FaPhone className="w-6 h-6" />,
       title: "Phone",
-      text: "+92 310 4847156", // formatted for readability
-      link: "tel:+923104847156", // functional link
-      color: "text-blue-500"
+      text: "+92 310 4847156",
+      link: "tel:+923104847156",
+      accent: "#3b82f6",
     },
     {
       id: 2,
       icon: <FaWhatsapp className="w-6 h-6" />,
       title: "WhatsApp",
       text: "+92 321 5837843",
-      link: "https://wa.me/923215837843", // Opens WhatsApp directly
-      color: "text-green-500"
+      link: "https://wa.me/923215837843",
+      accent: "#22c55e",
     },
     {
       id: 3,
       icon: <MdOutlineMail className="w-6 h-6" />,
       title: "Email",
       text: "ma6386731@gmail.com",
-      link: "mailto:ma6386731@gmail.com", // Opens email client
-      color: "text-red-500"
+      link: "mailto:ma6386731@gmail.com",
+      accent: "#ef4444",
     }
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-10">
-      <div id={theme} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div id={theme} className="w-full max-w-6xl mx-auto px-4 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {contactData.map((item) => (
-          <a 
-           id={theme}
+          <a
             key={item.id}
             href={item.link}
             target={item.title === 'WhatsApp' ? '_blank' : '_self'}
             rel="noreferrer"
-            className="group flex flex-col items-center justify-center p-8  rounded-xl shadow-sm border  transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer"
+            className="group flex flex-col items-center justify-center p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            style={{
+              border: '1px solid var(--border-default)',
+              backgroundColor: 'var(--overlay-light)',
+              backdropFilter: 'blur(12px)',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = item.accent;
+              e.currentTarget.style.boxShadow = `0 12px 30px -12px ${item.accent}`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'var(--border-default)';
+              e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+            }}
           >
-            {/* Icon Container with subtle background blob */}
-            <div className={`p-4 rounded-full bg-gray-50 dark:bg-gray-700 mb-4 transition-colors duration-300 group-hover:bg-opacity-80 ${item.color}`}>
+            {/* Icon container */}
+            <div
+              className="p-4 rounded-full mb-4 transition-transform duration-300 group-hover:scale-110"
+              style={{
+                backgroundColor: 'var(--surface-2)',
+                color: item.accent,
+              }}
+            >
               {item.icon}
             </div>
-            
-            <h3 className="text-lg font-bold  mb-2">
+
+            <h3
+              className="text-lg font-bold mb-2"
+              style={{ color: 'var(--text-primary)' }}
+            >
               {item.title}
             </h3>
-            
-            <p className=" text-sm md:text-base font-medium">
+
+            <p
+              className="text-sm md:text-base font-medium"
+              style={{ color: 'var(--text-secondary)' }}
+            >
               {item.text}
             </p>
           </a>

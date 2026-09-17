@@ -8,9 +8,11 @@ const ThemeProvider = ({ children }) => {
   const savedTheme = localStorage.getItem("theme") || "dark";
   const [theme, setTheme] = useState(savedTheme);
 
-  // Whenever the theme changes, save it to localStorage
+  // Whenever the theme changes, save it to localStorage and apply to body
   useEffect(() => {
     localStorage.setItem("theme", theme);
+    // Apply theme to document body so all CSS variables work globally
+    document.body.id = theme;
   }, [theme]);
 
   return (

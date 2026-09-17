@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import axios from 'axios';
@@ -27,6 +27,11 @@ function Contact() {
     width: typeof window !== 'undefined' ? window.innerWidth : 1200,
     height: typeof window !== 'undefined' ? window.innerHeight : 800
   });
+
+  const accentStyle = {
+    borderGradient: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))',
+    bgGradient: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+  };
 
   useEffect(() => {
     const handleResize = () => setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -81,8 +86,9 @@ function Contact() {
         viewport={{ once: true }}
         className="text-center mb-16 z-10"
       >
-        <h2 id={theme} className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-        <p className="text-lg opacity-80">Have a question or want to work together?</p>
+        <h2 id={theme} className="text-3xl md:text-4xl font-bold mb-4"
+            style={{ color: 'var(--text-primary)' }}>Get In Touch</h2>
+        <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>Have a question or want to work together?</p>
       </motion.div>
 
       <div className="relative w-full max-w-6xl h-[800px] flex items-center justify-center">
@@ -93,11 +99,18 @@ function Contact() {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 260, damping: 20 }}
           viewport={{ once: true }}
-          className="relative z-20 w-full max-w-[500px] p-[1.5px] rounded-2xl bg-white/20 shadow-2xl"
+          className="relative z-20 w-full max-w-[500px] rounded-2xl shadow-2xl"
+          style={{
+            padding: '1.5px',
+            background: accentStyle.borderGradient
+          }}
         >
           <div
-            className={`p-8 rounded-2xl transition-all duration-300 border backdrop-blur-md ${isDark ? 'border-white/10 text-white' : 'border-black/10 text-gray-900'}`}
-            style={{ backgroundColor: isDark ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.6)' }}
+            className='p-8 rounded-2xl transition-all duration-300 glass-card backdrop-blur-md'
+            style={{
+              backgroundColor: 'var(--surface-1)',
+              color: 'var(--text-primary)'
+            }}
           >
             <div className="text-center mb-6">
               {logo && <img src={logo} alt="Logo" className="w-12 h-12 mx-auto mb-2 object-contain" />}
@@ -106,59 +119,63 @@ function Contact() {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="flex flex-col">
-                <label className={`text-xs font-semibold mb-1 ${isDark ? 'text-white/70' : 'text-gray-700'}`} htmlFor="name">Name</label>
+                <label className='text-xs font-semibold mb-1'
+                       style={{ color: 'var(--text-muted)' }}
+                       htmlFor="name">Name</label>
                 <input
                   id="name" name="name" type="text" value={formData.name} onChange={handleChange}
                   placeholder="John Doe"
-                  className={`p-2 rounded-lg border bg-transparent outline-none transition-all ${
-                    errors.name
-                      ? 'border-red-500'
-                      : isDark
-                        ? 'border-white/20 focus:border-white/60'
-                        : 'border-black/20 focus:border-black/60'
-                  }`}
+                  className='p-2 rounded-lg border bg-transparent outline-none transition-all'
+                  style={{
+                    borderColor: errors.name ? 'var(--error)' : 'var(--border-default)',
+                    color: 'var(--text-primary)'
+                  }}
+                  onFocus={(e) => !errors.name && (e.target.style.borderColor = 'var(--accent-primary)')}
+                  onBlur={(e) => !errors.name && (e.target.style.borderColor = 'var(--border-default)')}
                 />
-                {errors.name && <span className="text-red-500 text-[10px]">{errors.name}</span>}
+                {errors.name && <span style={{ color: 'var(--error)' }} className="text-[10px]">{errors.name}</span>}
               </div>
               <div className="flex flex-col">
-                <label className={`text-xs font-semibold mb-1 ${isDark ? 'text-white/70' : 'text-gray-700'}`} htmlFor="email">Email</label>
+                <label className='text-xs font-semibold mb-1'
+                       style={{ color: 'var(--text-muted)' }}
+                       htmlFor="email">Email</label>
                 <input
                   id="email" name="email" type="email" value={formData.email} onChange={handleChange}
                   placeholder="john@example.com"
-                  className={`p-2 rounded-lg border bg-transparent outline-none transition-all ${
-                    errors.email
-                      ? 'border-red-500'
-                      : isDark
-                        ? 'border-white/20 focus:border-white/60'
-                        : 'border-black/20 focus:border-black/60'
-                  }`}
+                  className='p-2 rounded-lg border bg-transparent outline-none transition-all'
+                  style={{
+                    borderColor: errors.email ? 'var(--error)' : 'var(--border-default)',
+                    color: 'var(--text-primary)'
+                  }}
+                  onFocus={(e) => !errors.email && (e.target.style.borderColor = 'var(--accent-primary)')}
+                  onBlur={(e) => !errors.email && (e.target.style.borderColor = 'var(--border-default)')}
                 />
-                {errors.email && <span className="text-red-500 text-[10px]">{errors.email}</span>}
+                {errors.email && <span style={{ color: 'var(--error)' }} className="text-[10px]">{errors.email}</span>}
               </div>
               <div className="flex flex-col">
-                <label className={`text-xs font-semibold mb-1 ${isDark ? 'text-white/70' : 'text-gray-700'}`} htmlFor="message">Message</label>
+                <label className='text-xs font-semibold mb-1'
+                       style={{ color: 'var(--text-muted)' }}
+                       htmlFor="message">Message</label>
                 <textarea
                   id="message" name="message" rows="3" value={formData.message} onChange={handleChange}
                   placeholder="How can I help you?"
-                  className={`p-2 rounded-lg border bg-transparent outline-none transition-all resize-none ${
-                    errors.message
-                      ? 'border-red-500'
-                      : isDark
-                        ? 'border-white/20 focus:border-white/60'
-                        : 'border-black/20 focus:border-black/60'
-                  }`}
+                  className='p-2 rounded-lg border bg-transparent outline-none transition-all resize-none'
+                  style={{
+                    borderColor: errors.message ? 'var(--error)' : 'var(--border-default)',
+                    color: 'var(--text-primary)'
+                  }}
+                  onFocus={(e) => !errors.message && (e.target.style.borderColor = 'var(--accent-primary)')}
+                  onBlur={(e) => !errors.message && (e.target.style.borderColor = 'var(--border-default)')}
                 />
-                {errors.message && <span className="text-red-500 text-[10px]">{errors.message}</span>}
+                {errors.message && <span style={{ color: 'var(--error)' }} className="text-[10px]">{errors.message}</span>}
               </div>
               <button
                 type="submit" disabled={isSubmitting}
-                className={`w-full py-2 rounded-lg font-bold transition-all duration-300 ${
-                  isSubmitting
-                    ? isDark ? 'bg-white/20 text-white/50' : 'bg-black/20 text-black/50'
-                    : isDark
-                      ? 'bg-white text-black hover:bg-white/90 shadow-lg hover:shadow-white/20'
-                      : 'bg-black text-white hover:bg-black/90 shadow-lg hover:shadow-black/20'
-                }`}
+                className='btn-primary w-full'
+                style={{
+                  opacity: isSubmitting ? 0.5 : 1,
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                }}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>

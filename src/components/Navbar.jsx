@@ -20,7 +20,7 @@ function Navbar() {
   const [theme, setTheme] = useTheme();
 
   function handleChange() {
-    setTheme(prev => (prev === 'ligth' ? 'dark' : 'ligth'));
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   }
 
   return (
@@ -28,8 +28,8 @@ function Navbar() {
       <div
         // REMOVED: id={theme} (This was overriding your transparency)
         // ADDED: Conditional text color based on theme
-        className={`max-w-screen-2xl backdrop-blur-lg container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 
-          ${theme === 'ligth' ? 'bg-white/70 text-black' : 'bg-black/70 text-white'}`}
+        className={`max-w-screen-2xl backdrop-blur-lg container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50
+          ${theme === 'light' ? 'bg-white/70 text-black' : 'bg-black/70 text-white'}`}
       >
         <div className="flex justify-between items-center h-16">
           <div className="flex space-x-2">
@@ -51,7 +51,7 @@ function Navbar() {
               <DigitalTimer />
             </div>
             <div onClick={handleChange} className='cursor-pointer hover:scale-110 transition-transform duration-200'>
-              {theme === 'ligth' ? (
+              {theme === 'light' ? (
                 <Sun size={24} className="text-yellow-500 hover:text-yellow-400 transition-colors duration-200" />
               ) : (
                 <Moon size={24} className="text-blue-400 hover:text-blue-300 transition-colors duration-200" />
@@ -89,7 +89,7 @@ function Navbar() {
           <div
             // REMOVED: id={theme}
             className={`shadow-md h-screen w-full md:hidden fixed top-16 left-0
-              ${theme === 'ligth' ? 'bg-white text-black' : 'bg-black text-white'}`}
+              ${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'}`}
           >
             <div className="flex flex-col items-center justify-start pt-10 h-full">
               <div className="mb-12">

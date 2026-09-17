@@ -46,29 +46,34 @@ const About = () => {
                     variants={fadeUp}
                     className='pb-8'
                 >
-                    <p className='text-sm font-semibold tracking-[0.2em] uppercase opacity-70'>
+                    <p className='text-sm font-semibold tracking-[0.2em] uppercase'
+                       style={{ color: 'var(--text-muted)' }}>
                         Get to know me
                     </p>
-                    <h2 className='mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight'>
+                    <h2 className='mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight'
+                        style={{ color: 'var(--text-primary)' }}>
                         About
-                        <span className='ml-3 bg-gradient-to-r from-cyan-400 via-indigo-500 to-pink-500 bg-clip-text text-transparent'>
+                        <span className='ml-3 gradient-text'>
                             Me
                         </span>
                     </h2>
-                    <div className='mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-pink-500' />
+                    <div className='mt-4 h-1 w-24 rounded-full'
+                         style={{ background: 'linear-gradient(90deg, var(--accent-primary), var(--accent-secondary))' }} />
 
-                    <p className='mt-6 text-lg sm:text-xl leading-relaxed max-w-3xl opacity-90'>
-                        Hello! I&apos;m <span className='font-bold bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent'>Mudassir</span>,
+                    <p className='mt-6 text-lg sm:text-xl leading-relaxed max-w-3xl'
+                       style={{ color: 'var(--text-secondary)' }}>
+                        Hello! I&apos;m <span className='font-bold gradient-text'>Mudassir</span>,
                         a Full Stack Developer currently pursuing a BS in Software Engineering.
                         I specialize in turning creative ideas into robust, production-ready code.
                     </p>
 
                     {/* University badge */}
-                    <div className='mt-5 inline-flex items-center gap-3 px-4 py-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg'>
-                        <span className='inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-green-400 to-emerald-600 text-white font-bold'>
+                    <div className='mt-5 inline-flex items-center gap-3 px-4 py-3 rounded-xl glass-card shadow-lg'>
+                        <span className='inline-flex h-9 w-9 items-center justify-center rounded-lg font-bold text-white'
+                              style={{ background: 'linear-gradient(135deg, #22c55e, #16a34a)' }}>
                             U
                         </span>
-                        <p className='font-semibold italic'>
+                        <p className='font-semibold italic' style={{ color: 'var(--text-primary)' }}>
                             University of{' '}
                             <span className='text-red-500 not-italic font-bold'>I</span>slamia{' '}
                             <span className='text-red-500 not-italic font-bold'>C</span>ollege{' '}
@@ -90,33 +95,40 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeUp}
                             custom={1}
-                            className='group relative rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-md shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:shadow-cyan-500/20'
+                            className='group relative rounded-2xl p-6 glass-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl'
+                            style={{
+                                borderColor: 'var(--border-default)',
+                                '--hover-border': 'var(--accent-primary)'
+                            }}
+                            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-primary)'}
+                            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}
                         >
-                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 text-white shadow-md'>
+                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full text-white shadow-md'
+                                  style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))' }}>
                                 Education
                             </span>
-                            <h3 className='text-2xl font-bold mt-2 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent'>
+                            <h3 className='text-2xl font-bold mt-2 gradient-text'>
                                 BS in Software Engineering
                             </h3>
-                            <p className='text-sm mt-1 opacity-75'>
+                            <p className='text-sm mt-1' style={{ color: 'var(--text-muted)' }}>
                                 Islamia College Peshawar • Class of 2026
                             </p>
                             <div className='mt-4 grid sm:grid-cols-2 gap-4'>
                                 <div>
-                                    <p className='font-semibold flex items-center gap-2'>
-                                        <span className='h-1.5 w-1.5 rounded-full bg-cyan-400' />
+                                    <p className='font-semibold flex items-center gap-2' style={{ color: 'var(--text-primary)' }}>
+                                        <span className='h-1.5 w-1.5 rounded-full' style={{ backgroundColor: 'var(--accent-primary)' }} />
                                         Coursework
                                     </p>
-                                    <p className='text-sm mt-1 opacity-80'>
+                                    <p className='text-sm mt-1' style={{ color: 'var(--text-secondary)' }}>
                                         Data Structures, Algorithms, Computer Systems, Web Development, Database Systems.
                                     </p>
                                 </div>
                                 <div>
-                                    <p className='font-semibold flex items-center gap-2'>
-                                        <span className='h-1.5 w-1.5 rounded-full bg-pink-400' />
+                                    <p className='font-semibold flex items-center gap-2' style={{ color: 'var(--text-primary)' }}>
+                                        <span className='h-1.5 w-1.5 rounded-full' style={{ backgroundColor: 'var(--accent-secondary)' }} />
                                         Key Projects
                                     </p>
-                                    <p className='text-sm mt-1 opacity-80'>
+                                    <p className='text-sm mt-1' style={{ color: 'var(--text-secondary)' }}>
                                         Developed multiple software projects, including a web-based application using the MERN stack.
                                     </p>
                                 </div>
@@ -130,13 +142,17 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeUp}
                             custom={2}
-                            className='relative rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-md shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-indigo-400/50 hover:shadow-indigo-500/20'
+                            className='relative rounded-2xl p-6 glass-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl'
+                            style={{ borderColor: 'var(--border-default)' }}
+                            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-secondary)'}
+                            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}
                         >
-                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white shadow-md'>
+                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full text-white shadow-md'
+                                  style={{ background: 'linear-gradient(135deg, var(--accent-secondary), var(--accent-primary))' }}>
                                 Summary
                             </span>
-                            <h3 className='text-2xl font-bold mt-2'>Professional Summary</h3>
-                            <p className='mt-3 text-justify leading-relaxed opacity-90'>
+                            <h3 className='text-2xl font-bold mt-2' style={{ color: 'var(--text-primary)' }}>Professional Summary</h3>
+                            <p className='mt-3 text-justify leading-relaxed' style={{ color: 'var(--text-secondary)' }}>
                                 As a seasoned MERN stack developer, I possess a strong proficiency in
                                 designing, developing, and deploying scalable, efficient, and secure
                                 web applications. With a keen eye for detail and a passion for staying
@@ -156,12 +172,16 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeUp}
                             custom={3}
-                            className='relative rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-md shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:shadow-pink-500/20'
+                            className='relative rounded-2xl p-6 glass-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl'
+                            style={{ borderColor: 'var(--border-default)' }}
+                            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-primary)'}
+                            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}
                         >
-                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md'>
+                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full text-white shadow-md'
+                                  style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))' }}>
                                 Tech Stack
                             </span>
-                            <h3 className='text-2xl font-bold mt-2'>Technical Skills</h3>
+                            <h3 className='text-2xl font-bold mt-2' style={{ color: 'var(--text-primary)' }}>Technical Skills</h3>
                             <ul className='mt-4 flex flex-wrap gap-2'>
                                 {skills.map((s, i) => (
                                     <motion.li
@@ -171,7 +191,22 @@ const About = () => {
                                         whileInView='visible'
                                         viewport={{ once: true }}
                                         variants={fadeUp}
-                                        className='px-3 py-1.5 text-sm font-semibold rounded-full border border-white/15 bg-white/5 hover:scale-105 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-200 cursor-default'
+                                        className='px-3 py-1.5 text-sm font-semibold rounded-full transition-all duration-200 cursor-default'
+                                        style={{
+                                            border: '1px solid var(--border-default)',
+                                            backgroundColor: 'var(--overlay-light)',
+                                            color: 'var(--text-primary)'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                                            e.currentTarget.style.color = 'var(--accent-primary)';
+                                            e.currentTarget.style.transform = 'scale(1.05)';
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.borderColor = 'var(--border-default)';
+                                            e.currentTarget.style.color = 'var(--text-primary)';
+                                            e.currentTarget.style.transform = 'scale(1)';
+                                        }}
                                     >
                                         {s}
                                     </motion.li>
@@ -186,19 +221,24 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             variants={fadeUp}
                             custom={4}
-                            className='relative rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-md shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/50 hover:shadow-emerald-500/20'
+                            className='relative rounded-2xl p-6 glass-card shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl'
+                            style={{ borderColor: 'var(--border-default)' }}
+                            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-primary)'}
+                            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-default)'}
                         >
-                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full bg-gradient-to-r from-emerald-500 to-green-500 text-white shadow-md'>
+                            <span className='absolute -top-3 left-6 px-3 py-1 text-xs font-bold tracking-wider uppercase rounded-full text-white shadow-md'
+                                  style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))' }}>
                                 Capabilities
                             </span>
-                            <h3 className='text-2xl font-bold mt-2'>Development Capabilities</h3>
+                            <h3 className='text-2xl font-bold mt-2' style={{ color: 'var(--text-primary)' }}>Development Capabilities</h3>
                             <ul className='mt-4 space-y-2.5'>
                                 {capabilities.map((c) => (
                                     <li key={c} className='flex items-start gap-3'>
-                                        <span className='mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-indigo-500 text-white text-[10px] font-bold'>
+                                        <span className='mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full text-white text-[10px] font-bold'
+                                              style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))' }}>
                                             ✓
                                         </span>
-                                        <span className='opacity-90'>{c}</span>
+                                        <span style={{ color: 'var(--text-secondary)' }}>{c}</span>
                                     </li>
                                 ))}
                             </ul>

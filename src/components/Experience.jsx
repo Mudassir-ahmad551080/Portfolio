@@ -41,11 +41,11 @@ const Experience = () => {
           viewport={{ once: true }}
           className='text-center mb-20'
         >
-          <h2 id={theme} className='text-3xl md:text-4xl font-bold mb-4 inline-block relative'>
+          <h2 id={theme} className='text-3xl md:text-4xl font-bold inline-block relative'>
             Experience
             <span className='absolute -bottom-2 left-0 w-full h-1 bg-lime-500 rounded-full'></span>
           </h2>
-          <p className='text-gray-600 dark:text-gray-400 mt-4'>
+          <p className='text-gray-600 text-center mb-2 dark:text-gray-400 mt-40 align-baseline text-lg'>
             My professional journey and the milestones I've achieved along the way.
           </p>
         </motion.div>
